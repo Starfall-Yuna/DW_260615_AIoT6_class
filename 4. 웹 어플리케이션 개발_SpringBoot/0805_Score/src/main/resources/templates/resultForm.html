@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>성적 출력 폼</title>
+	</head>
+	<body>
+		<h3><span th:text="${name}"></span>님의 성적은 아래와 같습니다.</h3>
+		<hr>
+		<h4>평균: <span th:text="${average}"></span>점</h4>
+		<h4>학점: <span th:text="${score}"></span></h4>
+		
+		<form action="/input_score" method="get">
+			<input type="submit" value="다시 입력">
+		</form>
+	</body>
+</html>

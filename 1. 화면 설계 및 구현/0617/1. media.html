@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 멀티미디어 표현 :: 오디오, 비디오, 유튜브 영상(<iframe>, 현재는 막힘)-->
+    
+    <!-- audio태그 :: 음성 파일 표현
+        src :: 표현할 오디오 파일 불러오기
+        loop :: 무한 반복 재생
+        controls :: 오디오 재생 컨트롤러 생성 (없으면 확인X)
+    -->
+    <h1 id="audio">행아웃 통화음 소리</h1>
+    <audio src="hangouts_incoming_call.ogg" loop controls>
+        이 브라우저에서는 해당 형식을 지원하지 않습니다.    <!-- 표현X 대체 텍스트-->
+    </audio>
+    <br>
+
+    <!-- 브라우저에서 지원하는 형식을 알아서 선택할 수 있게끔 하는 방법-->
+    <audio controls>
+        <!-- source태그 활용 -> 여러 음성 파일 등록-->
+        <source src="hangouts_incoming_call.mp3" type="audio/mp3">
+        <source src="hangouts_incoming_call.ogg" type="audio/ogg">
+        이 브라우저에서는 해당 형식들을 지원하지 않습니다.
+    </audio>
+
+    <!-- video태그 :: 영상 파일 표현
+        src :: 표현할 비디오 파일 불러오기
+        width, height :: 비디오 크기(너비, 높이) 지정
+        poster :: 썸네일 지정
+        controls :: 비디오 재생 컨트롤러 생성 (없으면 확인X)
+    -->
+    <h1 id="video">인공폭포 영상</h1>
+    <video src="waterfall.mpeg" poster="image.png" width="400" height="300" controls>
+        이 브라우저에서는 해당 형식을 지원하지 않습니다.
+    </video>
+    <br>
+    
+    <!-- video태그와 source태그를 활용하여, 
+        2개의 동영상을 업로드하되, 브라우저가 지원하는 형식을 골라 하나를 표현할 수 있게끔
+        동영상 표현하기-->
+    <video width="400" height="700" poster="image.png" controls>
+        <source src="waterfall.mp4" type="video/mp4">
+        <source src="waterfall.mpeg" type="video/mpeg">
+        이 브라우저에서는 해당 형식들을 지원하지 않습니다.
+    </video>
+    <br>
+
+    <!-- a태그를 통해 이 페이지 내부 이동-->
+    <a href="#audio">오디오로 이동</a> <br>     <!-- id속성값이 audio인 요소로 이동-->
+    <a href="#video">비디오로 이동</a>          <!-- id속성값이 video인 요소로 이동-->
+    <a href="#">위로 이동</a>
+</body>
+</html>

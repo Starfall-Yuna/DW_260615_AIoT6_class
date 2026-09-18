@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>마트/시장 조회</title>
+	</head>
+	<body>
+		<h1>마트/시장 조회</h1>
+		<button onclick="showList()">목록 조회</button>
+		<hr>
+				
+		<검색결과>
+		<div id="result"></div>
+		
+		<script>
+			function showList(){
+				alert("API 정보를 조회합니다.");
+				
+				// 1. 이벤트에 관여되는 요소 당겨오기
+				result = document.querySelector("#result");
+				
+				// 2. url 변수값 구성
+				url = 
+					"https://apis.data.go.kr/6300000/openapi2022/shppg" +
+					"/getshppg" +
+					"?serviceKey=zvlXpYH9ktzxM7siJSmQjLWjpZNRb9NDe9F%2FUIhY2J6UNiRTtEbxFIlHwJTX14BTy1P4NV0FM8NZZhBOLIld6g%3D%3D" +
+					"&pageNo=1" +
+					"&numOfRows=12";
+				
+				// 3. fetch() 통해서, api 접속 시도
+				// 오픈API "대전광역시 문화관광(쇼핑)" 데이터 조회
+				fetch(url)
+					.then(response => {
+						if(response.ok != true){
+							throw new Error("API 연동 실패")
+						}
+						
+					 	return response.json();
+					})
+					.then(data => {
+						items = data.response.body.items;
+						
+						print = "";
+						items.forEach(item => {	// items의 데이터 개수만큼 반복
+							// item 이름으로 데이터를 하나씩 확인
+							
+							// 위 조회 결과를 #result에 출력
+							print += "<h2>"+item.shppgNm+"</h2>";
+							print += "<p>주소: "+item.shppgAddr+"</p>";
+							print += "<p>전화번호: "+item.shppgInqrTel+"</p>";
+							print += "<p>운영시간: "+item.salsTime+"</p>";
+							if(item.shppgHmpgUrl === ""){	// 홈페이지 url값이 공란일 때,
+								print += "<p>링크없음</p>";
+							}
+							else{	// 홈페이지 url값이 공란이 아닐때,
+								print += "<p><a href='"+item.shppgHmpgUrl+"'>바로가기</a></p>";
+							}
+							// <p><a href='http://dept.galleria.co.kr'>바로가기</a></p>
+							print += "<hr>";
+						})
+						
+						result.innerHTML = print;
+					})
+					.catch(error => {
+						result.innerHTML = error.message;
+					})
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+-- SELECT문 :: 테이블 데이터 조회
+
+-- 계정 테이블 생성 (4개의 칼럼)
+CREATE TABLE ACCOUNT(
+    ID VARCHAR2(30),
+    PASSWD VARCHAR2(30),
+    ORNER_NAME VARCHAR2(50),
+    CREATE_DATE DATE
+);
+
+INSERT INTO ACCOUNT VALUES ('leeyn', '1234', 'Lee', '2026-07-01');
+INSERT INTO ACCOUNT VALUES ('qwer', '0000', 'Park', '2026-06-01');
+INSERT INTO ACCOUNT VALUES ('admin', '1111', 'Kim', '2026-01-01');
+INSERT INTO ACCOUNT VALUES ('user', '0101', 'Yun', '2026-05-30');
+
+-- SELECT [출력할_행] FROM [테이블명];
+SELECT * FROM ACCOUNT;
+
+-- AS :: 별명 사용
+SELECT 
+    ID AS 아이디,
+    PASSWD AS 비밀번호
+FROM ACCOUNT;
+
+-- ORDER BY :: 정렬 (ASC(기본), DESC)
+INSERT INTO ACCOUNT VALUES ('acc1', '9999', 'Hong', '2026-05-30');
+-- 계정 생성일 기준으로 내림차순 정렬 -> ID를 기준으로 오름차순 정렬
+SELECT * FROM ACCOUNT
+    ORDER BY CREATE_DATE DESC, ID;
+
+-- DISTINCT :: 중복 데이터 제거 
+SELECT DISTINCT CREATE_DATE FROM ACCOUNT

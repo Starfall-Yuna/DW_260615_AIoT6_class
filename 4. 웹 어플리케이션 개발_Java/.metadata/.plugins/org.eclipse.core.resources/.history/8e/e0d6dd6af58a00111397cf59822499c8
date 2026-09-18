@@ -1,0 +1,149 @@
+// 순수 Java 프로젝트 - DB(MySQL) 연동
+// 1. DB 서버(MySQL) 설치
+// 2. 기존의 내장 클래스 활용(Connetor J 설치) -> Java에서 DB 접속 시도
+//		- Connection :: DB서버 주소, 접속계정 기반으로, DB 접속 시도
+//		- PreparedStatement :: 실제 사용 가능한 SQL문 변환
+//		- ResultSet :: SQL문 실행 결과를 받아옴
+// 3. SQL문 실행
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+public class Main {
+	// 0. Java 프로젝트에서 MySQL DB 서버 접속 준비
+	// 		=> 접속할 DB 주소, 접속계정 아이디/비밀번호
+	static String url = "jdbc:mysql://localhost:3306/test_db";
+	static String username = "root";	
+	static String passwd = "1234";		
+
+	public static void main(String[] args) {
+		while(true) {
+			System.out.println("원하는 기능을 입력해주시길 바랍니다.");
+			System.out.println("1. 전체 데이터 조회");
+			System.out.println("2. 특정 데이터 수정");
+			
+			Scanner sc = new Scanner(System.in);
+			int num = sc.nextInt();
+			
+			// switch 구문 활용 -> num값을 1로 입력받았을 때 selectQuery() 실행
+			switch(num) {
+			case 1:
+				selectQuery();	break; // 전체 데이터 조회
+			case 2:
+				updateQuery();	break; // 특정 데이터 수정
+			case 3:
+				insertQuery();  break; // 신규 데이터 삽입
+			case 4:
+				deleteQuery();  break; // 특정 데이터 삭제
+			case 0:
+				System.exit(0);		// 프로그램 실행 종료
+			default:
+				System.out.println("다시 입력해주시길 바랍니다.");
+			}
+		}
+	}
+	
+	public static void insertQuery() {
+		Scanner scan = new Scanner(System.in);
+		
+		// 1. 3개의 값(id, passwd, name)을 입력받기
+		String input_id = scan.next();
+		String input_pw = scan.next();
+		String input_name = scan.next();
+		
+		// 2. insert문 작성 및 sql문 실행 준비
+		// 3. sql문 실행 및 안내문 출력
+		String sql =  "insert into account values (?, ?, ?);";
+		
+		try {
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			System.out.println("--- DB접속 성공 ---");
+			
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, input_id);
+			ps.setString(2, input_name);
+			ps.setString(3, input_pw);
+		}catch(Exception e) {
+			System.out.println("[ 데이터 삽입 ] 작업 실패");
+			System.out.println(e.getMessage());
+		}
+	}
+	public static void updateQuery() {
+		Scanner scan = new Scanner(System.in);
+		
+		// 1. 사용자에게 비밀번호를 변경할 데이터의 아이디값 입력 받기
+		System.out.print("비밀번호를 변경할 아이디를 입력하세요. ");
+		String target_id = scan.next();
+		
+		// 2. 변경할 비밀번호 값을 사용자에게 입력
+		System.out.print("변경할 비밀번호를 입력하세요. ");
+		String target_pw = scan.next();
+		
+		// 3. DB 접속 및 비밀번호 변경 수행한 뒤, 안내문 출력
+		//		? :: Java 변숫값을 넣을 공간 확보
+		String sql = "update account set passwd = ? where id = ?";
+		
+		try {
+			// 1. MySQL DB 접속 시도
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			System.out.println("--- DB접속 성공 ---");
+			
+			// 2. SQL문 실행 준비
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, target_pw);		// 첫번째 ?(set)에, target_pw값 삽입
+			ps.setString(2, target_id);		// 두번째 ?(where)에, target_id값 삽입
+			
+			// 3. SQL문 실행
+			ps.executeUpdate();
+			System.out.println("[ 데이터 수정 ] 작업 성공");
+			
+		}catch(Exception e) {
+			System.out.println("[ 데이터 수정 ] 작업 실패");
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public static void selectQuery() {
+		String sql = "select * from account;";		// 실행할 sql문 명령어
+		
+		try {
+			// 1. MySQL DB 접속 시도 (Connection 클래스 활용)	-> 접속 실패하면, 즉시 catch로 이동
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			System.out.println("--- DB접속 성공 ---");
+			
+			// 2. SQL문 실행 준비 (PreparedStatement 클래스 활용) -> 적합X SQL문이라면, 즉시 catch로 이동
+			PreparedStatement ps = con.prepareStatement(sql);
+			
+			// 3. SQL문 실행 (ResultSet 클래스 활용, SELECT문 결과 받아냄)
+			ResultSet rs = ps.executeQuery();
+			System.out.println("[ 데이터 조회 ] 작업 성공");
+			
+			// 4. SQL select문 실행 결과 조회
+			while(rs.next()) {	// 조회할 결과에 "다음 데이터가 있다면",
+				String get_id = rs.getString("id");			// 현재 데이터의 id 칼럼값 조회
+				String get_pw = rs.getString("passwd");
+				String get_name = rs.getString("name");
+				
+				System.out.println("아이디: "+get_id);
+				System.out.println("비밀번호: "+get_pw);
+				System.out.println("이름: "+get_name);
+				System.out.println();
+			}
+		}catch(Exception e) {
+			System.out.println("[ 데이터 조회 ] 작업 실패");
+			System.out.println(e.getMessage());
+			// Unknown database 'test' (test DB 확인 불가)
+			// Access denied for user 'root'@'localhost' (접근 거부)
+			// You have an error in your SQL syntax; (SQL 구문 오류)
+		}
+		
+	}
+}
+
+
+
+
+

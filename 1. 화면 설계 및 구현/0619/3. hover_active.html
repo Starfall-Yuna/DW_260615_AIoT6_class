@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            width: 100px;
+            height: 100px;
+            background-color:darkturquoise;
+            border: 2px solid black;
+        }
+        
+        /* 반응 선택자(:hover, :active) :: 사용자 동작에 반응하는 스타일 지정 */
+        /* :hover :: 요소에 마우스를 갖다댔을 때의 스타일 지정 */
+        /* :active :: 요소를 마우스로 클릭했을 때의 스타일 지정 */ 
+        p:hover{
+            font-size: 30px;
+            width: 300px;
+            height: 300px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="rect">
+        사각형
+    </p>
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+public class Ex_calc {
+	// * 함수 생성
+//	public static [반환형] [함수이름](매개변수타입1 매개변수명1, ...) {
+//		실행할 명령문;
+//	}
+	public static int add(int n) {
+		return n+1;
+	}
+	
+	public static void main(String args[]) {
+		System.out.println(add(5));	
+	}
+}

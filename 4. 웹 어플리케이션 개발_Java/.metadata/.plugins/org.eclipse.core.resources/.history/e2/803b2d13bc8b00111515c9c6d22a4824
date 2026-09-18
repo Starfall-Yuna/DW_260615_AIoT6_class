@@ -1,0 +1,5 @@
+package Service;
+
+public class ItemService {
+	static String url = "jdbc:mysql://localhost:3306/test_db";
+}

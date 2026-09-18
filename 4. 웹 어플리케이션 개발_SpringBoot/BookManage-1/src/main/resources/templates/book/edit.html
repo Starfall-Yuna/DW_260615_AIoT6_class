@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>책 수정 페이지</title>
+	</head>
+	<body>
+		<h1>책 수정</h1>
+		<hr>
+		
+		<form th:object="${rs}" method="post"
+			th:action="@{/book/edit/{id}(id=${bookId})}">
+			제목:
+			<input type="text" th:value="*{title}" name="title">		<br>
+			가격:
+			<input type="text" th:value="*{price}" name="price">		<br>
+			
+			<input type="submit" value="수정">			
+		</form>
+	</body>
+</html>

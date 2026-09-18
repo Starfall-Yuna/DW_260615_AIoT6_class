@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>실시간 이름 출력</h1>
+    <label>이름을 입력하세요: </label>
+    <input type="text" id="nameInput">
+    <p id="result">입력한 이름이 여기에 나옵니다.</p>
+
+    <script>
+        let name_input = document.querySelector("#nameInput");
+        let print_name = document.querySelector("#result")
+        name_input.addEventListener("input", function(){ // 입력창에 입력할 때마다,
+            //  아래의 p 태그 내용 변동
+            print_name.textContent = "입력한 이름: " + name_input.value;
+        })
+    </script>
+</body>
+</html>

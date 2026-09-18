@@ -1,0 +1,61 @@
+
+class Person{
+	// 접근 제어자 :: 클래스의 멤버의 접근을 제어하는 구문
+	//	- public :: "공적인", 어디서든지 자유롭게 접근O
+	//	- private :: "사적인", 클래스 내부에서만 접근O (그 이외는 접근X)
+	//		=> "캡슐화"
+	//	- protected (상속과 연관, 소개X)
+	
+	// 필드 :: name(이름), number(주민등록번호), address(주소)
+	private String name;
+	private String number;	// Person 클래스 안에서만 접근O, 그 이외는 접근X
+	private String address;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getNumber() {		// get함수 :: private 필드값 불러오기
+		return this.number;
+	}
+	public void setNumber(String number) {	// set함수 :: private 필드값 재설정
+		this.number = number;
+	}
+	
+	// name, address도 public -> private으로 변경
+	// get/set을 활용해서 값 설정
+}
+
+public class public_private {
+	public static void main(String args[]) {
+		// Person에 대한 p1 인스턴스 생성
+		Person p1 = new Person();
+		// p1.name = "Lee";
+		// p1.number = "000000-0000000";	// main함수 관점에서는, number 멤버가 확인X
+		// p1.address = "대전 중구";
+		
+		p1.setName("Lee");
+		p1.setNumber("000000-0000000");		// private 필드값 설정
+			// setNumber() 실행 -> this(p1).number = "000000-0000000";
+		p1.setAddress("대전 중구");
+		
+		System.out.println(p1.getName());
+		System.out.println(p1.getNumber());
+		System.out.println(p1.getAddress());
+	}
+}
+
+
+
+
+
+
+

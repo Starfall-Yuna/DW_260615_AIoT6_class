@@ -1,0 +1,13 @@
+<!-- thymeleaf :: Java단의 값을 html에서 읽어내는 문법-->
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>재고 추가 완료</title>
+	</head>
+	<body>
+		<!-- [id]의 재고가 [입고수량]만큼 추가되었습니다 -->
+		<h3>
+			<span th:text="${proId}"></span>의 재고가
+			<span th:text="${amount}"></span>만큼 추가되었습니다.
+		</h3>
+	</body>
+</html>

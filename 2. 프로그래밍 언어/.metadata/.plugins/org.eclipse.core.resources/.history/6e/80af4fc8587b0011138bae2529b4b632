@@ -1,0 +1,19 @@
+
+// * Menu 인터페이스 생성
+interface Menu{
+	// - 필드 :: TAX_RATE = 10(부가세율)
+	public int TAX_RATE = 10;	// 상수(final), 값 변경X
+	
+	// - 메소드 :: order(), printInfo()
+	public void order();	
+	public void printInfo();	// -> 추상(abstract) 메소드
+}
+
+public class Ex_menu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

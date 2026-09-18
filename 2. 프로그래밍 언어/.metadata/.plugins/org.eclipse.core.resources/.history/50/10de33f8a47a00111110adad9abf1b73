@@ -1,0 +1,9 @@
+package sulji;
+
+import java.awt.Shape;
+
+public class dtd {
+	public static void main(String args[]) {
+		Shape s= new Shape("green");
+	}
+}

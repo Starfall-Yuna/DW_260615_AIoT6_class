@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 이름, 나이, 성별 입력받기 (함수 입력X)
+        let n = prompt("이름 입력");
+        let a = Number(prompt("나이 입력"));
+        let w = confirm("성별이 여성입니까? (맞다면 확인을 눌러주세요)")
+
+        // 2. 2030여성지원 과정 참여가 가능한지를 판별하는 함수 작성
+        //      => 조건 :: 20대~30대 여성만 참여가 가능함
+        function okClass(name, age, woman){     // 함수 이름 :: okClass
+            alert(`환영합니다, ${name}님`)
+
+            // woman 예상값 :: true(여성) / false(남성)
+            if(woman === true && (20 <= age && age < 40)){
+                alert("과정 참여가 가능합니다.");
+            }
+            else{
+                alert("과정 참여가 불가능합니다.");
+            }
+        }
+
+        // 3. 2에서 작성한 함수 실행
+        okClass(n, a, w);
+    </script>
+</body>
+</html>

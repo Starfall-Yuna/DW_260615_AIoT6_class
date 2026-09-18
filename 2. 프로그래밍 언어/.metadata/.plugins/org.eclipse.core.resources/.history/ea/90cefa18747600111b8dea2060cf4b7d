@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class review {
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+		
+		// String(문자열) :: 
+		//		[문자열 길이 제시] -> length()
+		//		[문자열 일부 자르기] -> s
+		// 아스키코드
+		
+	}
+}

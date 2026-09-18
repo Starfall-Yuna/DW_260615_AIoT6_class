@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 부정 선택자(:not) :: "~이 아닌", () 안에 있는 선택자 내용 반대로 적용 */
+        div{    /* div 태그 전체 선택 */
+            margin: 20px;
+            padding: 10px;
+        }
+        /*
+        div:not(#title){    div 태그 중, id="title"이 아닌 태그 선택 
+            background-color: bisque;
+        }
+        */
+        div:not(.disabled){
+            background-color: bisque;
+        }
+        div:not(.warning){
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div id="title" class="box">제목 박스</div>
+    <div class="box warning">경고 박스</div>
+    <div class="box">그냥 박스</div>
+    <div class="box disabled">안 쓰는 박스</div>
+</body>
+</html>

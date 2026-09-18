@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>할일 목록 조회 페이지</title>
+	</head>
+	<body>
+		<h1>할일 조회 프로그램</h1>
+		<hr>
+		
+		<h3>1. ID로 할일 조회</h3>
+		<form action="/todo/searchId" method="post">
+			할일ID: 
+			<input type="text" name="todoId">
+			<input type="submit" value="조회">
+		</form>
+		<hr>
+		
+		<h3>2. 미완료 할 일 개수 조회</h3>
+		<form action="/todo/count" method="post">
+			<input type="submit" value="미완료 개수 조회">
+		</form>
+	</body>
+</html>
+
+
+
+

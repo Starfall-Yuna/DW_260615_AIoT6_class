@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;0806_Service/src/main/resources/templates/calchForm.html&apos; to &apos;calcForm.html&apos;" description="Rename resource &apos;calchForm.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/calchForm.html" name="calcForm.html" stamp="1785976668300" updateReferences="true"/>
+</session>

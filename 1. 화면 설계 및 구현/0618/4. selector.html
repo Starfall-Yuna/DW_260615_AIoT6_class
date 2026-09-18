@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 선택자(selector) :: "선택하는 사람", 스타일 적용할 HTML 태그 선택
+            "어떤 태그들(선택자)에
+            어떤 스타일(속성값 추가)을 줄 것인가?"
+        */
+        /* "어떤 방식으로 태그를 선택하는가?" */
+
+        /* 태그 선택자(태그이름) :: 문서 안의 특정 태그(들) 선택*/
+        div{
+            background-color:lightgreen;
+            width: 500px;
+        }
+        /* id 선택자(#) :: 특정 id값 가진 태그 선택 */
+        #title{     /* id="title"인 태그 선택 -> h1 태그 선택 */
+            border: 3px solid orangered;
+        }
+        /* "class 선택자(.)" :: 특정 class값을 포함하는 태그 선택 */
+        .fruit{
+            font-weight: bold;
+        }
+        .good{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- id속성 :: 태그 식별자 -->
+    <h1 id="title">과일 소개</h1>
+    <div id="title1">
+        <!-- class속성 :: 요소 그룹화에 사용-->
+         <!-- fruit 클래스에 2개의 p태그 존재 -->
+        <p class="good fruit">사과는 빨간색입니다.</p>      <!-- class값(2개) :: good, fruit-->
+        <p class="fruit">바나나는 노란색입니다.</p>         <!-- class값(1개) :: fruit-->
+    </div>
+</body>
+</html>

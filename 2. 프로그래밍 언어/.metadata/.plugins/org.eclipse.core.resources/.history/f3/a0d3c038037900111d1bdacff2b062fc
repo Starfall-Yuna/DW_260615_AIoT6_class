@@ -1,0 +1,60 @@
+
+class ToDo{
+	// 클래스 구성 요소 :: 필드, 메소드, "생성자"
+	// 	- 생성자 :: 인스턴스를 생성하는 특수한 메소드(함수)
+	//		=> 반환형X, 클래스 이름과 동일
+	
+	// 필드 :: content(할일 내용), date(마감일)
+	public String content;
+	public String date;
+	
+	// 메소드 :: printToDo()
+	public void printToDo() {
+		System.out.println("해야할 일: "+this.content);
+		System.out.println("마감일: "+this.date);
+	}
+	
+	// 별도로 생성자 만들지 않으면, 아래 코드가 자동 실행됌
+//	public ToDo() {
+//		
+//	}
+	
+	// * 생성자 오버로딩
+	public ToDo() {
+		System.out.println("생성자가 실행됩니다.");
+		// content값을 "수업 듣기"로 설정
+		// date값 "2026-07-10"로 설정
+		this.content = "수업 듣기";
+		this.date = "2026-07-10";
+		// (위 작업 끝냈다면, main에서 t1의 content, date값 출력)
+	}
+//	- ToDo(String, String) 구현 :: content, date값을 각 매개변수 값으로 설정
+	public ToDo(String c, String d) {
+		System.out.println("생성자가 실행됩니다. (String, String)");
+		this.content = c;
+		this.date = d;
+	}
+}
+
+public class Constructor {
+	public static void main(String[] args) {
+		// 인스턴스 t1 생성
+		ToDo t1 = new ToDo();
+			// ToDo t1  		-> ToDo 멤버를 t1에게 제공
+			// t1 = new ToDo()	-> ToDo() 생성자 실행
+		// t1.ToDo();
+		
+		t1.printToDo();
+		
+		// 인스턴스 t2 생성
+		//	2) t2 생성
+		//		2-1) ToDo(String, String) 임의의 값 넣어서 실행
+//		ToDo t2 = new ToDo("운동하기", "2026-07-06");
+		
+		//		2-2) ToDo(String, String) 사용자의 입력값 넣어서 실행
+		Scanner scan = new Scanner(System.in);
+		Todo t2 = new ToDo(String, String);
+		t2.printToDo();
+	}
+
+}

@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>책 대여 폼</title>
+	</head>
+	<body>
+		<h1>도서 대여 프로그램</h1>
+		<hr>
+		
+		<h3>책 대여</h3>
+		<form action="/rental" method="post">
+			<label>책ID </label>
+			<input type="text" name="book_id" placeholder="예: B001">
+			<input type="submit" value="책 대여">
+			<!-- localhost:8080/rental 접속-->
+		</form>
+		<hr>
+		
+		<h3>책 반납</h3>
+		<form action="/return" method="post">
+			<label>책ID </label>
+			<input type="text" name="book_id" placeholder="예: B001">
+			<input type="submit" value="책 반납">
+			<!-- localhost:8080/return 접속-->
+		</form>
+		<hr>
+		
+		<h3>대여 가능한 책 조회</h3>
+		<form action="/count" method="post">
+			<input type="submit" value="대여 가능 권수 조회" >
+			<!-- localhost:8080/count 접속-->
+		</form>
+	</body>
+</html>

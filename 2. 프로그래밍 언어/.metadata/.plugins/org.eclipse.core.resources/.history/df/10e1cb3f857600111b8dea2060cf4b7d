@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Ex_574 {
+	public static int useIF(int n1, int n2, int n3) {
+		int result;
+		if(n1>n2) {}
+	}
+	public static int useMaxFunc(int n1, int n2, int n3) {
+		
+	}
+	
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+//		- 3개의 정수 입력
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		int c = scan.nextInt();
+//		- 최댓값 반환하는 함수 실행 및 출력
+		
+	}
+}

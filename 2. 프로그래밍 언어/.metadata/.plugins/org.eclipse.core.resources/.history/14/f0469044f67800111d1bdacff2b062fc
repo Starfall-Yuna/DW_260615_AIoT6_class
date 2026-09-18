@@ -1,0 +1,21 @@
+
+class ToDo{
+	// 필드 :: content(할일 내용), date(마감일)
+	public String content;
+	public String date;
+	
+	// 메소드 :: printToDo()
+	public void printToDo() {
+		System.out.println("해야할 일: "+this.content);
+		System.out.println("마감일: "+this.date);
+	}
+}
+
+public class Constructor {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

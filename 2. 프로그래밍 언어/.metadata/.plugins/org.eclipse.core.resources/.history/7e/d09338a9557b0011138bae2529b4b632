@@ -1,0 +1,14 @@
+
+// * Menu 인터페이스 생성
+interface Menu{
+	
+}
+
+public class Ex_menu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

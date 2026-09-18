@@ -1,0 +1,20 @@
+
+class ToDo{
+	// 필드 :: content(할일 내용), date(마감일)
+	public String content;
+	public String date;
+	
+	// 메소드 :: printToDo()
+	public void printToDo() {
+		
+	}
+}
+
+public class Constructor {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

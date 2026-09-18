@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>책 상세 페이지</title>
+	</head>
+	<body>
+		<h1>책 상세</h1>
+		<hr>
+		
+		제목:
+		<span th:text="${rs.title}"></span>	<br>
+		가격: 
+		<span th:text="${#numbers.formatInteger(rs.price, 3, 'COMMA')}"></span>	<br>
+		입력일:
+		<span th:text="${#temporals.format(rs.insertDateTime, 'yyyy-MM-dd HH:mm')}"></span>	<br>
+		
+		<!-- localhost:8080/book/edit/[책번호] -->
+		<a th:href="@{/book/edit/{id}(id=${rs.bookId})}">수정</a>
+		<!-- localhost:8080/book/delete/[책번호] -->
+		<a th:href="@{/book/delete/{id}(id=${rs.bookId})}">삭제</a>
+	</body>
+</html>
+
+

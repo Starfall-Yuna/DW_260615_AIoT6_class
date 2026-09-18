@@ -1,0 +1,26 @@
+
+// 오버라이딩 :: 
+// 추상 클래스 :: 
+abstract class Animal{
+	// - 생성자 :: Animal()
+	public Animal() {
+		System.out.println("동물 데이터를 생성합니다.");
+	}
+	// - 메소드 :: Cry()	-> 추상 메소드
+	abstract public void Cry();
+}
+class Dog{
+	
+}
+class Cat{
+	
+}
+
+public class review {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

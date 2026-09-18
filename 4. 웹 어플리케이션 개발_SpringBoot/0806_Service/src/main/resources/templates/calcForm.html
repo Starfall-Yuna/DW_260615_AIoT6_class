@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>계산기 폼</title>
+	</head>
+	<body>
+		<h1>아래를 입력하세요.</h1>
+		
+		<form action="doCalc" method="post">
+			<input type="text" name="number1" >
+			<select name="oper">
+				<option value="plus">+</option>		<!-- oper="plus"-->
+				<option value="minus">-</option>	<!-- oper="minus"-->
+				<option value="multi">*</option>	<!-- oper="multi"-->
+				<option value="division">/</option>	<!-- oper="division"-->
+				<option value="rest">%</option>		<!-- oper="rest"-->
+			</select>
+			<input type="text" name="number2" >
+			
+			<input type="submit" value="연산" >
+			<!-- localhost:8080/doCalc로 post방식으로 이동 -->
+		</form>
+	</body>
+</html>

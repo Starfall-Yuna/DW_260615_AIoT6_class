@@ -1,0 +1,21 @@
+package Service;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class ItemService {
+	static String url = "jdbc:mysql://localhost:3306/test_db";
+	static String username = "root";
+	static String passwd = "1234";
+	
+	public static void selectItem() {
+		String sql = "SELECT * FROM ITEM";
+		try {
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			System.out.println("--- DB접속 성공 ---");
+		}catch(Exception e) {
+			System.out.println("DB작업 실패");
+			e.printStackTrace();
+		}
+	}
+}

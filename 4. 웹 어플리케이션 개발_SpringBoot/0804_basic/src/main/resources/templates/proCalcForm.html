@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>좀 더 향상된 계산기</title>
+	</head>
+	<body>
+		<h1>계산기 업그레이드</h1>
+		<hr>
+		<form action="/execute" method="post">
+			<input type="text" name="number1">
+			<select name="operator">
+				<option value="plus">+</option>		<!--operator="plus"-->
+				<option value="minus">-</option>	<!--operator="minus"-->
+				<option value="multi">*</option>	<!--operator="multi"-->
+				<option value="division">/</option>	<!--operator="division"-->
+				<option value="rest">%</option>		<!--operator="rest"-->
+			</select>
+			<input type="text" name="number2">
+					
+			<input type="submit" value="연산" >
+			<!-- localhost:8080/execute 링크를 post 방식으로 이동 -->
+		</form>
+	</body>
+</html>

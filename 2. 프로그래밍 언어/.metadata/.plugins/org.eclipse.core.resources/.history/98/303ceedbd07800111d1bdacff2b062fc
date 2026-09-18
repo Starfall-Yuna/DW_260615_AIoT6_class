@@ -1,0 +1,38 @@
+
+// * Clock 클래스 작성
+class Clock{
+	// - 필드 :: 시(hour), 분(min), 초(sec), 구입년도(year)
+	//		=> 클래스에 속하는 "멤버 변수"
+	public int hour;
+	public int min;
+	public int sec;
+	public int year;
+	
+	// - 메소드 
+	//		=> 클래스에 속하는 "멤버 함수"
+	// 	- printTime() :: 시/분/초 정보 기반 시간 출력하는 메소드
+	
+	// 	- AmPm() :: 저장된 시간의 값이 오전인지 오후인지 출력하는 메소드
+	// 	- changeDevice() :: 구입년도 출력한 뒤, 2026년 기준 구입한 지 5년이 지났다면 기기 교체 안내 메시지 출력하는 메소드
+}
+
+// 
+public class review {
+	// 함수 오버로딩 :: 
+	// 클래스 ::
+	public static void main(String args[]) {
+		// - c1 인스턴스 생성
+		Clock c1 = new Clock();
+		// - c1의 필드값 설정 :: hour=0, min=0, sec=0, year=2020
+		c1.hour = 0;
+		c1.min = 0;
+		c1.sec = 0;
+		c1.year = 2020;
+		// - printTime(), AmPm(), changeDevice() 실행
+	}
+}
+
+
+
+
+

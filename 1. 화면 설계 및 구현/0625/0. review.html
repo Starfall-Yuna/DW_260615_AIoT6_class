@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 이벤트 적용(1) :: on이벤트 속성 활용-->
+    <h1 onclick="intro()">To Do List</h1>   <!-- 사용자 클릭하면, intro() 찾아서 안의 내용 실행-->
+    <hr>
+
+    <label>할일: </label>
+    <input type="text" id="todo" >      <br>
+    <label>마감일: </label>
+    <input type="date" >        <br>
+    <button>등록</button>
+
+    <hr>
+    <h3>할일 목록</h3>
+    <div></div>
+
+    <script>
+        // 함수 :: "여러 명령문을 하나로 묶은 것"
+        // * 함수 생성
+        // function [함수이름](매개변수이름1, 매개변수이름2, ...){
+        //     수행할 명령문들;
+        // }
+        function intro(){       // 함수 생성 !== 함수 실행
+            alert("아래 항목에 맞게 입력하시길 바랍니다.");
+
+            // DOM(html 문서 구조) 조작
+            // 1. HTML 태그(요소) Js 변수 연결
+            //  - document.getElementById() :: 특정 id값과 동일한 태그 불러옴
+            //  - document.querySelector() :: CSS 선택자처럼 태그 불러옴
+            let td = document.getElementById("todo");
+            let d = document.querySelector("[type='date']");
+            // 2. 태그와 연결된 변수 설정 
+            td.style.backgroundColor = "yellow";
+            d.style.backgroundColor = "yellow";
+                // DOM 조작과 관련된 명령어를 통해, 속성값 추가
+        }
+
+        // 이벤트 적용(2) :: addEventListener()
+        let td = document.querySelector("#todo");
+        let d = document.querySelector("[type='date']");
+        let btn = document.querySelector("button");
+        let divTag = document.querySelector("div");
+        btn.addEventListener("click", function(){
+            // textContent :: 특정 태그의 글자 항목
+            // innerHTML :: 특정 태그의 글자 항목 (html 문법 인식)
+            // divTag.textContent += td.value+" "+d.value+"<br>";
+            divTag.innerHTML += td.value+" "+d.value+"<br>";
+        })
+
+        // querySelectorAll() :: 2개 이상의 태그 불러옴 -> 배열 개념 필요
+    </script>
+</body>
+</html>

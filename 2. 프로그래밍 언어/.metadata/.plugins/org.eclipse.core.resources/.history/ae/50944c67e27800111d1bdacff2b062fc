@@ -1,0 +1,21 @@
+
+class Person{
+	// 접근 제어자 :: 
+	//	- public :: 
+	//	- private ::
+	
+	// 필드 :: name(이름), number(주민등록번호), address(주소)
+	public String name;
+	private String number;
+	public String address;
+}
+
+public class public_private {
+	public static void main(String args[]) {
+		// Person에 대한 p1 인스턴스 생성
+		Person p1 = new Person();
+		p1.name = "Lee";
+		p1.number = "000000-0000000";	// main함수 관점에서는, number 멤버가 확인X
+		p1.address = "대전 중구";
+	}
+}

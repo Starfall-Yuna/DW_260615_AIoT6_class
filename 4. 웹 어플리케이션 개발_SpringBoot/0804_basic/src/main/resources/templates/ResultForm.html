@@ -1,0 +1,11 @@
+<!-- thymeleaf :: 서버에서 전달하는 값을 html에서 읽을 수 있게끔 함 -->
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>계산기_결과</title>
+	</head>
+	<body>
+		<h1>아래는 결과입니다</h1>
+		<hr>
+		<h3>연산결과: <span th:text="${rs}"></span></h3>
+	</body>
+</html>

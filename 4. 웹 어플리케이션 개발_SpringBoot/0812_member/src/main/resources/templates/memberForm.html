@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>사용자 조회 폼</title>
+	</head>
+	<body>
+		<h2>총 사용자 수 조회</h2>
+		<form action="/member/count" method="post">
+			<input type="submit" value="조회">
+		</form>
+		<hr>
+		
+		<h2>사용자 정보 조회</h2>
+		<form action="/member/search" method="post">
+			사용자ID: 
+			<input type="text" name="targetId">
+			<input type="submit" value="검색">
+		</form>
+	</body>
+</html>
+

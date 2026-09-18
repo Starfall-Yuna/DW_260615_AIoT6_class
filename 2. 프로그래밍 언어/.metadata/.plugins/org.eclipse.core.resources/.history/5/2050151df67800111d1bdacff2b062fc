@@ -1,0 +1,15 @@
+
+class ToDo{
+	// 필드 :: content(할일 내용), date(마감일)
+	public String content;
+	public String date;
+}
+
+public class Constructor {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

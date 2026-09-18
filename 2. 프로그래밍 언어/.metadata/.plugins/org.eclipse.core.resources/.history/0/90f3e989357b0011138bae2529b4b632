@@ -1,0 +1,18 @@
+
+// * Computer 클래스 생성
+class Computer{
+	// - 필드 :: name(기종), year(구입년도)
+	public String name;
+	public int year;
+	// printCom(), changeCom() -> 추상 메소드
+	abstract public void printCom();
+	abstract public void changeCom();
+}
+
+public class Ex_Computer {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

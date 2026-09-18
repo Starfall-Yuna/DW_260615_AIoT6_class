@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  <!-- head에서 웹페이지 설정-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 주석(설명문) */
+        /* html :: 웹페이지 화면 구성 */
+        /* css :: Cascading StyleSheet, 웹페이지 화면 디자인 */
+        /*
+            * CSS 적용 방법 (3가지)
+            1. 인라인 스타일 (각 태그에 스타일 직접 적용) -> 지양
+            2. 내부 CSS (<head>-<style> 안에 스타일 작성)
+            3. 외부 CSS ()
+        */
+
+        /* 내부 CSS, 문서의 모든 p태그 "선택"해서 스타일 적용 */
+        p{
+            background-color:chartreuse;
+            border: 3px solid black;
+        }
+
+        /*
+            선택자{
+                속성명1: 속성값1;
+                속성명2: 속성명2;
+                ...
+            }
+        */
+    </style>
+    <!-- 외부 CSS 불러오기 <link> -->
+    <link rel="stylesheet" href="test_style.css">
+</head>
+<body>  <!-- body에서 웹페이지 내용-->
+    <!-- 인라인 스타일의 css -->
+    <!-- style="속성명1:속성값1; 속성명2:속성값2; ..."-->
+    <p style="width: 300px; height: 300px">
+        사각형
+    </p>
+
+    <!--
+    <p>테스트1</p>
+    <p>테스트2</p>
+    -->
+    <!-- html, css 주석 설정/해제 ::
+        Ctrl + /-->
+
+</body>
+</html>

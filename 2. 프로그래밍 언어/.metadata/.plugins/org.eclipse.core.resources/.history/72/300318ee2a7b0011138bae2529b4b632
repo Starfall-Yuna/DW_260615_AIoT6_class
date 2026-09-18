@@ -1,0 +1,30 @@
+
+// 오버라이딩 :: 
+// 추상 클래스 :: "구체적이지 않은 클래스", 인스턴스 생성X
+abstract class Animal{
+	// - 생성자 :: Animal()
+	public Animal() {
+		System.out.println("동물 데이터를 생성합니다.");
+	}
+	// - 메소드 :: Cry()	-> 추상 메소드
+	abstract public void Cry();
+}
+// 클래스 간의 공통되는 멤버를, 추상 클래스로 묶어냄
+//		-> 추상 메소드의 구체화는 
+class Dog extends Animal{
+	public void Cry() {
+		
+	}
+}
+class Cat extends Animal{
+	
+}
+
+public class review {
+
+	public static void main(String[] args) {
+		// Animal a = new Animal();
+
+	}
+
+}

@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>상품 상세 조회</title>
+	</head>
+	<body>
+		<h2>상품 상세 정보</h2>
+		<!-- <div>태그 rt 데이터 개수만큼 생성-->
+		<div th:each="item: ${rt}">
+			<p>
+				<img th:src="${item.image_link}"
+					width="300" height="300">
+			</p>
+			<p>
+				상품번호: 
+				<span th:text="${item.item_num}"></span>
+			</p>
+			<p>
+				상품명:
+				<span th:text="${item.name}"></span>
+			</p>
+			<p>
+				최저가:
+				<span th:text="${item.low_price}"></span>
+			</p>
+			<p>
+				<a th:href="${item.item_page}">판매 사이트 이동</a>
+			</p>
+		</div>
+	</body>
+</html>

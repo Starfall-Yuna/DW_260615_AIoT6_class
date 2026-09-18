@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>수강 신청서</h1>
+    <label>이름: </label>
+    <input type="text" placeholder="이름을 입력하세요"> <br>
+    <label>이메일: </label>
+    <input type="text" placeholder="이메일을 입력하세요"> <br>
+    <label>비밀번호: </label>
+    <input type="password" placeholder="비밀번호를 입력하세요"> <br>
+
+    <label>성별: </label>
+    <!-- 다중 커서 :: Ctrl + Alt + 방향키
+                    Alt + 마우스 클릭-->
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">남성</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">여성</label>
+    <input type="radio" id="none" name="gender" value="none">
+    <label for="none">선택안함</label> 
+    <br>
+
+    <label>관심 분야: </label>
+    <label>
+        <input type="checkbox" name="favo" value="HTML">
+        HTML
+    </label>
+    <label>
+        <input type="checkbox" name="favo" value="CSS">
+        CSS
+    </label>
+    <label>
+        <input type="checkbox" name="favo" value="JavaScript">
+        JavaScript
+    </label>
+    <label>
+        <input type="checkbox" name="favo" value="Python">
+        Python
+    </label>
+    <br>
+
+    <label>수강 희망 시간: </label>
+    <select>
+        <option>오전반</option>
+        <option>오후반</option>
+        <option>저녁반</option>
+    </select>
+    <br>
+
+    <label>자기소개: </label><br>
+    <textarea rows="5" cols="40" placeholder="자기소개를 입력해주세요"></textarea>
+    <br>
+
+    <input type="button" value="신청하기">
+    <input type="button" value="다시 작성">
+</body>
+</html>

@@ -1,0 +1,21 @@
+package Service;
+
+import java.util.Scanner;
+
+public class NumberService {
+	static String url = "";
+	static String username = ""; 
+	static String passwd = "";
+	
+	public static void numberInsert() {
+		// 사용자에게 숫자 2개를 입력
+		Scanner scan = new Scanner(System.in);
+		int n1 = scan.nextInt();
+		int n2 = scan.nextInt();
+		// target DB 테이블에 데이터 저장
+		
+	}
+	public static void numberCalc() {
+		
+	}
+}

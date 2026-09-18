@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>할일 정보</title>
+	</head>
+	<body>
+		<h1>할일 정보</h1>
+		<hr>
+		
+		<h3>할일ID: <span th:text="${id}"></span></h3>
+		<h3>분류: <span th:text="${category}"></span></h3>
+		<h3>내용: <span th:text="${content}"></span></h3>
+		<h3>완료여부: <span th:text="${completed}"></span></h3>
+	</body>
+</html>

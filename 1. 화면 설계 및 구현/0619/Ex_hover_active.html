@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            background-color:bisque;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+        }
+
+        /*- 요일 입력란(text input) ::
+            마우스 클릭했을 때(:active) 배경색 바뀜 */
+        input:active{   
+            /* "input 태그에 마우스를 클릭했을 때의 스타일 지정" */
+            background-color: darkkhaki;
+        }
+        /*- 요일 박스(p) :: 마우스를 올렸을 때(:hover)
+            글자 굵어짐
+            너비 넓어짐
+            배경색 바뀜 (평일/토/일 각각 다른색)
+        */
+        p:hover{
+            font-weight: bold;
+            width: 300px;
+        }
+        .day:hover{
+            background-color: lightgrey;
+        }
+        .satur:hover{
+            background-color: blue;
+            color: white;
+        }
+        .sun:hover{
+            background-color: red;
+            color: white;
+        }
+
+        /* 스타일 적용 순서 :: 
+            1. 인라인 스타일 적용
+            2. 내부 CSS
+            3. 외부 CSS
+        */
+    </style>
+</head>
+<body>
+    <label>오늘은 무슨 요일인가요?</label>  <br>
+    <input type="text"> <br>
+
+    <p class="day">월</p>
+    <p class="day">화</p>
+    <p class="day">수</p>
+    <p class="day">목</p>
+    <p class="day">금</p>
+    <p class="satur">토</p>
+    <p class="sun">일</p>
+</body>
+</html>

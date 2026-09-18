@@ -1,0 +1,33 @@
+package Service;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class ItemService {
+	static String url = "jdbc:mysql://localhost:3306/test_db";
+	static String username = "root";
+	static String passwd = "1234";
+	
+	public static void selectItem() {
+		String sql = "SELECT * FROM ITEM;";
+		try {
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			System.out.println("--- DB접속 성공 ---");
+			
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();	// select문 결과 rs에 담김
+			
+			while(rs.next()) {
+				// DB 데이터를 불러오면서, Item 클래스 인스턴스 생성
+				String item_id = rs.getString("item_id");
+				String item_name = rs.getString("name");
+				int item_price = rs.getInt("price");
+			}
+		}catch(Exception e) {
+			System.out.println("DB작업 실패");
+			e.printStackTrace();
+		}
+	}
+}

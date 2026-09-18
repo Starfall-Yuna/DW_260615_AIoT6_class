@@ -1,0 +1,72 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>책 목록</title>
+	</head>
+	<body>
+		<h1>책 목록</h1>
+		<hr>
+		<table>
+			<tr>
+				<th>책번호</th>
+				<th>책제목</th>
+			</tr>
+			
+			<!-- rs의 데이터 하나하나를 item 이름으로 접근
+				<tr> 함께 자동 생성 -->
+			<tr th:each="item :${rs}">
+				<td th:text="${item.bookId}"></td>
+				<td>
+					<a th:text="${item.title}"
+						th:href="@{/book/read/{id}(id=${item.bookId})}"></a>
+				</td>
+			</tr>
+		</table>
+		
+		<a th:href="@{/book/create}">책 추가하기</a>	<br>
+		
+		<br>
+		<p>총 <span th:text="${count}"></span>권의 책 데이터에서 검색을 수행합니다.</p>
+		<form method="post" action="/book/search">
+			제목 : 
+			<input type="text" name="title">
+			<input type="submit" value="검색">
+		</form>
+		
+		<!-- REST API 활용하여, 검색 수행 -->
+		<label>책번호 : </label>
+		<input type="number" id="book_num">
+		<button onclick="searchBook()">검색</button>
+		<!-- "검색"을 누르면(onclick), 책번호를 통한 검색 결과를 아래로 표시(function)-->
+		
+		<!-- <div> :: 검색한 결과 내용을 텍스트로 표현 -->
+		<div id="result" style="height: 150px; border: 2px solid black"></div>
+		
+		<script>
+			// 책번호를 통한 "검색" 버튼을 눌렀을 때의 이벤트 정의
+			function searchBook(){
+				alert("검색이 완료되었습니다.");
+				
+				bookId = document.querySelector("#book_num").value;		// 사용자 입력값
+				result = document.querySelector("#result");		// 검색결과 표현할 공간
+				
+				// javascript 통해서, /api/book/[책번호] 링크의 데이터 받아오기
+				fetch("/api/book/"+bookId)							// /api/book/[책번호] 접속 시도
+					.then(response => {								// 접속 결과 response에 대해 (200, 404, 400, 405, ...)
+						if(response.ok != true){					// 정상 처리(200)되지 못했을 때
+							throw new Error("책을 찾을 수 없습니다.");	// "책을 찾을 수 없습니다." 에러 발생
+						}
+						
+						return response.json();		// 처리 결과 json형식(텍스트) 바꾸어 사용자에게 전달
+					})
+					.then(data => {				// 링크 접속하고 받아낸 data에 대해 
+						result.innerHTML = 
+							"책번호: "+data.bookId+"<br>"+
+							"책제목: "+data.title;
+					})
+					.catch(error => {
+						result.innerHTML = error.message;
+					});
+			}
+		</script>
+	</body>
+</html>

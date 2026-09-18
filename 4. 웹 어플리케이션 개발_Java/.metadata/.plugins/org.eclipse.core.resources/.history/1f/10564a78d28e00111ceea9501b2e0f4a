@@ -1,0 +1,12 @@
+package Service;
+
+public class NumberService {
+	public static void numberInsert() {
+		// 사용자에게 숫자 2개를 입력
+		Scanner scan = new Scanner(System.in);
+		// target DB 테이블에 데이터 저장
+	}
+	public static void numberCalc() {
+		
+	}
+}

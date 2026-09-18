@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>성적 입력 완료</title>
+	</head>
+	<body>
+		<h2>아래처럼 성적 입력이 완료되었습니다</h2>
+		<hr>
+		<h3>학생 이름: <span th:text="${Name}"></span></h3>
+		<h3>Java: <span th:text="${java}"></span></h3>
+		<h3>MySQL: <span th:text="${mysql}"></span></h3>
+		<h3>SpringBoot: <span th:text="${sb}"></span></h3>
+		
+		<form action="/score" method="get">
+			<input type="submit" value="첫화면으로">
+		</form>
+	</body>
+</html>

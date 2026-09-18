@@ -1,0 +1,11 @@
+package Model;
+
+public class Book {
+	public String book_name;
+	public String author;
+	public String isbn;
+
+	public Book(String n, String a, String i) {
+		
+	}
+}

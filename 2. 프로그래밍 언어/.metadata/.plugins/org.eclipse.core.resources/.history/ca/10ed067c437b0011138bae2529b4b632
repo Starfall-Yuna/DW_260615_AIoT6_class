@@ -1,0 +1,26 @@
+
+// 일반 class를 통해서는, 2개 이상의 부모 클래스 지정X = 다중 상속X
+//		=> 인터페이스 개념 등장한 계기
+
+class Robot {
+	public void test() {System.out.println("Robot:테스트");}
+	public void checkBattery() {
+		System.out.println("현재 배터리를 출력합니다.");
+	}
+}
+class dog{
+	public void test() {System.out.println("Dog:테스트");}
+	public void bark() {
+		System.out.println("월월");
+	}
+}
+class RobotDog extends Robot, dog{
+	
+}
+
+public class class_interface {
+	public static void main(String args[]) {
+		RobotDog rd = new RobotDog();
+		rd.test();	// -> Robot.test(), dog.test() 중 어떤걸 실행할지 결정X
+	}
+}

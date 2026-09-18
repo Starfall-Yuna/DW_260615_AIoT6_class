@@ -1,0 +1,22 @@
+
+// 오버라이딩 ::
+// 추상 클래스 :: 
+abstract class Animal{
+	// - 생성자 ::
+	// - 메소드 :: 
+}
+class Dog{
+	
+}
+class Cat{
+	
+}
+
+public class review {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

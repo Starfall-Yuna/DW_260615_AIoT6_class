@@ -1,0 +1,47 @@
+
+// 객체 :: 
+// 인스턴스 :: 
+// 클래스 ::
+
+// * 클래스 생성
+class Person{	// 이름이 Person인 클래스 생성
+	// * 필드(클래스 멤버변수)
+	public String name;
+	public String number;
+	public String address;
+	
+	// * 메서드(클래스 멤버함수)
+	public void print() {
+		System.out.println("이름: "+this.name);
+		System.out.println("번호: "+this.number);
+		System.out.println("주소: "+this.address);
+	}
+//	* p1.print() 실행할 때, print 내용
+//	public void print() {
+//		System.out.println("이름: "+p1.name);
+//		System.out.println("번호: "+p1.number);
+//		System.out.println("주소: "+p1.address);
+//	}
+	
+	// this :: "자기 자신의 것"
+}
+
+public class Java_class {
+
+	public static void main(String[] args) {
+		// * 인스턴스 생성
+		Person p1 = new Person();
+		p1.name = "이유나";
+		p1.number = "000000-2111111";
+		p1.address = "대구 북구";
+		p1.print();
+		System.out.println();
+		
+		Person p2 = new Person();
+		p2.name = "김00";
+		p2.number = "010000-1234567";
+		p2.address = "대전 중구";
+		p2.print();
+	}
+
+}

@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<title>맛집 조회</title>
+	</head>
+	<body>
+		<h1>맛집 리스트</h1>
+		<button onclick="showList()">목록 조회</button>
+		
+		<br>
+		주소로 검색: 
+		<input type="text" id="keyword">
+		<button onclick="showSearch()">검색</button>
+		<hr>
+		
+		<!-- "검색" 버튼을 누르면, <div> 위치에
+			ADRES값에 사용자 입력값이 포함되는 항목만 목록으로 출력 -->
+		
+		<div id="list">
+			<!-- 2개 이벤트의 print 변수값이 여기에 삽입 -->
+		</div>
+		
+		
+		
+		<script>
+			function showSearch(){
+				// 1. 목록 조회 결과를 표현할 태그 당겨오기 (querySelector())
+				result = document.querySelector("#list");
+				
+				// 2. 오픈API 접속할 링크 변수값(url) 구성
+				url = 
+					"https://apis.data.go.kr/6430000/cbRecreationalFoodInfoService" +
+					"/getRecreationalFoodInfo" +
+					"?serviceKey=zvlXpYH9ktzxM7siJSmQjLWjpZNRb9NDe9F%2FUIhY2J6UNiRTtEbxFIlHwJTX14BTy1P4NV0FM8NZZhBOLIld6g%3D%3D" +
+					"&pageNo=1" +
+					"&numOfRows=10";
+				
+				// 3. fetch() 통해서, 오픈API 접속+검색결과 웹페이지 표현
+				fetch(url)
+					.then(response => {
+						if(response.ok != true){
+							throw new Error("오픈API 접속 실패");
+						}
+						return response.json();
+					})
+					.then(data => {
+						keyword = document.querySelector("#keyword").value;
+						
+						// - 오픈API 데이터 전체 가져오기
+						items = data.body;
+						// - 전체 중 검색을 하여 결과 추출
+						search_result = 
+							items.filter(item => item.ADRES.includes(keyword));
+						console.log(search_result);
+						
+						print = "";	// html상 표현할 내용
+						search_result.forEach(rs => {
+							print += "<h2>"+rs.CMPNM+"</h2>";
+							print += "<p>"+rs.ADRES+"</p>";
+							print += "<hr>";
+						})
+						result.innerHTML = print;
+					})
+					.catch(error => {
+						result.innerHTML = error.message;
+					})
+			}
+			
+			function showList(){
+			// 1. 목록 조회 결과를 표현할 태그 당겨오기 (querySelector())
+			result = document.querySelector("#list");
+			
+			// 2. 오픈API 접속할 링크 변수값(url) 구성
+			url = 
+				"https://apis.data.go.kr/6430000/cbRecreationalFoodInfoService" +
+				"/getRecreationalFoodInfo" +
+				"?serviceKey=zvlXpYH9ktzxM7siJSmQjLWjpZNRb9NDe9F%2FUIhY2J6UNiRTtEbxFIlHwJTX14BTy1P4NV0FM8NZZhBOLIld6g%3D%3D" +
+				"&pageNo=1" +
+				"&numOfRows=10";
+			
+			// 3. fetch() 통해서, 오픈API 접속+결과값 웹페이지 표현
+			fetch(url)
+				.then(response => {
+					if(response.ok != true){ 	// 200처리가 아니면,
+						throw new Error("API 접속 실패");
+					}
+					return response.json();
+				})
+				.then(data => {
+					// - 정상처리 :: 3가지 카테고리 내용으로 목록 출력
+					items = data.body;
+					
+					print = "";
+					// 10개의 데이터가 있는 items에 대해서,
+					//	item이란 이름으로 [0], [1], [2], ... 접근 
+					items.forEach(item => {
+						print += "<h2>"+item.CMPNM+"</h2>";
+						print += "<p>대표메뉴: "+item.MNMNU+"</p>";
+						print += "<p>메뉴: "+item.MENU+"</p>";
+						print += "<hr>";
+						
+						console.log(print);
+					})
+					result.innerHTML = print;
+				})
+				.catch(error => {
+					// - 비정상처리 :: "오픈API 접근 실패" 출력
+					result.innerHTML = error.message;
+				})
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>게시판 목록</title>
+	</head>
+	<body>
+		<h2>게시판 리스트</h2>
+		<hr>
+		<table border="1">
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+			</tr>
+			
+			<!-- rst데이터(select문 결과) 데이터 개수만큼 tr 태그 생성-->
+			<tr th:each="item: ${rst}">
+				<!-- item이름으로 데이터 하나하나 확인 -->
+				<td th:text="${item.id}"></td>
+				<td>
+					<!-- get방식으로 게시판id값 전송+"/board/detail" 주소 이동 -->
+					<!-- 	"localhost:8080/board/detail?id=[게시판ID] 이동"-->
+					<a th:href="@{/board/detail(id=${item.id})}"
+						th:text="${item.title}">
+					</a>
+				</td>
+				<td th:text="${item.writer}"></td>
+			</tr>
+		</table>
+	</body>
+</html>

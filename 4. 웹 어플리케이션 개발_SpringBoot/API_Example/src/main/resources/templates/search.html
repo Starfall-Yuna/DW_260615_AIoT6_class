@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>가게 검색 창</title>
+	</head>
+	<body>
+		<h1>지역별 가게 검색</h1>
+		
+		검색어(00구):
+		<input type="text" id="keyword">
+		<button onclick="doSearch()">검색</button>
+		<hr>
+		
+		<검색결과>
+		<div id="result"></div>
+		
+		<script>
+			function doSearch(){
+				alert("검색을 수행합니다.");	
+				
+				// 1. 이벤트에 관여되는 요소 당겨오기
+				keyword = document.querySelector("#keyword").value;
+					// 주소지 검색에 대한 사용자의 입력값
+				result = document.querySelector("#result");
+					// 검색결과를 표현할 공간
+					
+				// 2. url 변수값 구성
+				url = 
+					"https://apis.data.go.kr/6300000/openapi2022/shppg" +
+					"/getshppg" +
+					"?serviceKey=zvlXpYH9ktzxM7siJSmQjLWjpZNRb9NDe9F%2FUIhY2J6UNiRTtEbxFIlHwJTX14BTy1P4NV0FM8NZZhBOLIld6g%3D%3D" +
+					"&pageNo=1" +
+					"&numOfRows=12";
+				
+				// 3. fetch() 통해서, api 접속 시도
+				fetch(url)
+					.then(response => {
+						if(response.ok != true){
+							throw new Error("검색 실패")
+						}
+										
+						return response.json();
+					})
+					.then(data => {
+						// - 오픈API 전체 데이터 불러오기 (items 이름 저장)
+						items = data.response.body.items;
+						// - 전체 데이터에 대해 검색(filter) 수행
+						// 		(search_result 이름 검색결과 저장)
+						//	(ex) 검색어: 유성구 => shppgAddr 값에 "유성구"를 포함하는가?
+						search_result = 
+							items.filter(item => item.shppgAddr.includes(keyword));
+						
+						// 검색결과를 웹 페이지(#result)에 표현
+						print = "";
+						search_result.forEach(item => {
+							// item 이름으로 데이터를 하나씩 확인
+														
+							// 위 조회 결과를 #result에 출력
+							print += "<h2>"+item.shppgNm+"</h2>";
+							print += "<p>주소: "+item.shppgAddr+"</p>";
+							print += "<p>전화번호: "+item.shppgInqrTel+"</p>";
+							print += "<p>운영시간: "+item.salsTime+"</p>";
+							if(item.shppgHmpgUrl === ""){	// 홈페이지 url값이 공란일 때,
+								print += "<p>링크없음</p>";
+							}
+							else{	// 홈페이지 url값이 공란이 아닐때,
+								print += "<p><a href='"+item.shppgHmpgUrl+"'>바로가기</a></p>";
+							}
+							// <p><a href='http://dept.galleria.co.kr'>바로가기</a></p>
+							print += "<hr>";
+						})
+						
+						result.innerHTML = print;
+					})
+			}
+		</script>
+	</body>
+</html>
+
+

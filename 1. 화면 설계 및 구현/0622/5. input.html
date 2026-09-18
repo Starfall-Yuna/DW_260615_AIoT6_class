@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 입력문(2) :: prompt(), confirm()
+        // prompt() :: string 자료형의 입력을 받음
+        //      prompt(질문지, 초기 입력값);
+        // prompt("이름을 입력해주세요.", "(ex)홍길동");
+        //      -> 입력값이 13번줄 이후로 소멸이 됌 (활용X)
+
+        let name = prompt("이름을 입력해주세요.", "(ex)홍길동");
+        // 입력값을 name 변수에 저장
+
+        // number형 입력 :: Number() + prompt()
+        let age = Number(prompt("나이를 입력해주세요.", 0));
+
+        // confirm() :: boolean 자료형의 입력을 받음
+        //      확인을 누르면 true, 취소를 누르면 false
+        let tf = confirm("성별을 입력해주세요.(남성은 확인, 여성은 취소)");
+
+        document.write("이름: "+name+"<br>");
+        document.write("성별값: "+tf+"<br>");
+        document.write("나이: "+age);
+        </script>
+</body>
+</html>

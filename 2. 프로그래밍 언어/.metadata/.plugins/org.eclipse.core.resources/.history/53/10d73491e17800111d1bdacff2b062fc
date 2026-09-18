@@ -1,0 +1,13 @@
+
+class Person{
+	// 접근 제어자 :: 
+	public String name;
+	public String number;
+	public String address;
+}
+
+public class public_private {
+	public static void main(String args[]) {
+		
+	}
+}

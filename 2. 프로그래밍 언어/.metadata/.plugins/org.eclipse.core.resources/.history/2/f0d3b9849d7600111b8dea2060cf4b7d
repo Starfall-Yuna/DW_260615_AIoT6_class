@@ -1,0 +1,24 @@
+
+// 객체 :: 
+// 인스턴스 :: 
+// 클래스 ::
+
+// * 클래스 생성
+class Person{	// 이름이 Person인 클래스 생성
+	// * 필드(클래스 멤버변수)
+	public String name;
+	public String number;
+	public String address;
+}
+
+public class Java_class {
+
+	public static void main(String[] args) {
+		// * 인스턴스 생성
+		Person p1 = new Person();
+		p1.name = "이유나";
+		p1.number = "000000-2111111";
+		p1.address = "대구 북구";
+	}
+
+}

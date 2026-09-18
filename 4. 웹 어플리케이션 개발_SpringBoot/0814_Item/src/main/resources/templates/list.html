@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>상품 목록 조회</title>
+	</head>
+	<body>
+		<h2>상품 목록</h2>
+		<hr>
+		
+		<table border="1" style="width: 70%">
+			<tr>
+				<th>상품번호</th>
+				<th>상품명</th>
+			</tr>
+			
+			<tr th:each="item: ${r}">
+				<td th:text="${item.item_num}"></td>
+				<td>
+					<!-- th:href = "@{이동해줄_경로(전송해줄_값)}"-->
+					<a th:text="${item.name}"
+						th:href="@{/item/detail(item_num=${item.item_num})}">
+					</a>
+					<!-- /item/detail 링크 이동 (선택한 상품의 상품번호값(item_num) 전송) -->
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>사용자 관리 창</title>
+	</head>
+	<body>
+		<h1>사용자 검색</h1>
+		<hr>
+		
+		계정번호:
+		<input type="text" id="userId">
+		<button onclick="doSearch()">검색</button>
+		<br>
+		
+		<검색결과>
+		<div id="result"></div>
+		
+		<script>
+			// #userId 값을 기반으로, 계정이 존재하는지를 #result에 표시
+			function doSearch(){
+				alert("검색을 수행합니다.");
+				
+				target_id = document.querySelector("#userId").value;
+					// 검색에 사용할 번호값
+				result = document.querySelector("#result");	
+					// 검색결과 표시할 태그
+				
+				fetch("/api/user/"+target_id)
+					.then(response => {
+						if(response.ok != true){	// 비정상 처리
+							throw new Error("계정을 찾지 못 하였습니다. ");
+						}
+						return response.json();		// 검사창->Network탭
+					})
+					.then(data => {		// 정상 처리된 경우에만 넘어옴
+						result.innerHTML = "계정이 존재합니다.";
+					})
+					.catch(error => {
+						result.innerHTML = error.message;
+					})
+			}
+		</script>
+	</body>
+</html>
+
+

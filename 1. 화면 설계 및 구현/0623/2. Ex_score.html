@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1) 성적(1개의 숫자) 입력을 받으시오.
+        let score = Number(prompt("성적을 입력하시오"))
+
+        // 2) 성적값에 따라서, 아래처럼 결과 출력하시오.
+	    //     - 90~100점이라면, "A" 출력
+        if(90 <= score){    // score 값이 90 이상 100 이하일 때
+            console.log("A")
+        }
+	    //     - 80~89점이라면, "B" 출력
+        else if(80 <= score){ console.log("B") }
+	    //     - 70~79점이라면, "C" 출력
+        else if(70 <= score){ console.log("C") }
+	    //     - 60~69점이라면, "D" 출력
+        else if(60 <= score){ console.log("D") }
+	    //     - 0~59점이라면, "F" 출력 (위 학점이 모두 아닌 경우)
+        else { console.log("F") }
+    </script>
+</body>
+</html>

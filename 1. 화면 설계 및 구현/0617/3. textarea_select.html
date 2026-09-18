@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- textarea태그 :: 장문의 입력O
+            html 주석도 텍스트 내용 간주
+        rows :: 세로(행) 조절
+        cols :: 가로(열) 조절
+        (태그 안의 텍스트는 자동 입력됌)
+    -->
+    <textarea rows="10" cols="50" placeholder="자기소개를 입력해주세요."></textarea>
+    <br>
+
+    <!-- select태그 :: 여러 선택지 중 하나 선택하여 입력-->
+    <label>지역: </label>
+    <select>
+        <!-- option태그로 선택지 추가-->
+        <option>서울특별시</option>
+        <option>세종특별시</option>
+        <option>대전광역시</option>
+        <option>경기도</option>
+    </select>
+    <br>
+
+    <label>주요 사용 언어: </label>
+    <select>
+        <option>선택</option>
+        
+        <!-- optgroup태그 :: 선택지 그룹화-->
+        <optgroup label="웹 언어">
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+        </optgroup>
+        <optgroup label="프로그래밍 언어">
+            <option>C++</option>
+            <option>Java</option>
+            <option>Python</option>
+        </optgroup>
+    </select>
+</body>
+</html>

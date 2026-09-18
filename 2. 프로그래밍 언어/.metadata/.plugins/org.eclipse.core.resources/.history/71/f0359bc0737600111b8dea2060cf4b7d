@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+public class review {
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+		
+		// String(문자열) :: 
+		
+	}
+}

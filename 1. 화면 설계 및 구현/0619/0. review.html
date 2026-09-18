@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 주석(설명문) */
+        /* CSS :: 웹페이지 화면(HTML 문서) 디자인 */
+        /* 선택자 -> "어떤 태그들(선택자)에 어떤 스타일을 지정하는가?" */ 
+        /* 태그 선택자(태그이름) :: 문서 안의 특정 태그 지정 */
+        /* span{
+            border: 3px solid lightblue;
+            width: 500px;
+            height: 150px;
+        } */
+        div, span{
+            border: 3px solid salmon;
+            width: 400px;
+            height: auto;
+        }
+        div{
+            padding: 10px;
+        }
+        /* id 선택자(#) :: 특정 id값 가진 태그 선택 */ 
+        #what{
+            color: red;
+            font-weight: bold;
+        }
+        /* class 선택자(.) :: 특정 class값 "포함한" 태그 선택 */
+        .input{
+            width: 150px;
+        }
+        .button{
+            background-color:bisque;
+        }
+
+        /* 외부 CSS 적용 예시 ::
+            <link rel="stylesheet" href="test_style.css"> (.css 파일 필요)
+        */
+    </style>
+</head>
+<body>
+    <!-- div, span태그 :: 영역 분할 / 요소 그룹화 -->
+    <!-- 
+        div태그 :: display="block", 
+            너비는 브라우저 전체 - 높이는 필요한만큼, 너비/높이 설정O
+        span태그 :: [display="inline"],
+            너비/높이 필요한만큼, 너비/높이 설정X
+    -->
+    <div>
+        <span>할일을 등록하세요</span>
+        <!-- type="submit", type="reset" -> form태그 함께 활용
+            action속성 :: 입력 데이터 전송할 위치-->
+        <form action="todo.html">
+            <label id="what">할일: </label>
+            <input type="text" class="input">     <br>
+            <label>마감일: </label>
+            <input type="date" class="input">     <br>
+            
+            <input type="submit" value="등록" class="button">  <!-- 입력 데이터 전송 -->
+            <input type="reset" value="초기화" class="button"> <!-- 입력 데이터 초기화 -->
+        </form>
+    </div>
+    <div>
+        <span>예시 할일</span>
+        <ul>
+            <li>복습하기 (6/22)</li>
+            <li>분리수거 (6/23)</li>
+            <li>동사무소 들르기 (6/25)</li>
+        </ul>
+    </div>
+</body>
+</html>

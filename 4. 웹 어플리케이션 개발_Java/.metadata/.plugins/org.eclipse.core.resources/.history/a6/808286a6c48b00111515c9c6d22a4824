@@ -1,0 +1,16 @@
+package Model;
+
+// DB Item 테이블 칼럼과 동일한 구성의 Model.Item 클래스
+public class Item {
+	// item_id varchar(20) primary key,
+    // name varchar(100),
+    // price int
+	String item_id;
+	String name;
+	int price;
+	public Item(String i, String n, int p) {
+		this.item_id = i;
+		this.name = n;
+		this.price = p;
+	}
+}

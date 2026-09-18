@@ -1,0 +1,36 @@
+
+// * Computer 클래스 생성
+abstract class Computer{
+	// - 필드 :: name(기종), year(구입년도)
+	public String name;
+	public int year;
+	// printCom(), changeCom() -> 추상 메소드
+	abstract public void printCom();
+	abstract public void changeCom();
+}
+// * Laptop 클래스 생성 (Computer 상속)
+class Laptop extends Computer{
+	// printCom() :: 멤버 2개에 대한 값 출력
+	public void printCom() {
+		System.out.println("기종명: "+this.name);
+		System.out.println("구입년도: "+this.year);
+	}
+	// changeCom() :: 구입년도가 2026년 기준 10년이 지났다면 교체 메시지 출력
+	public void changeCom() {
+		if(2026 - this.year >= 10) {
+			System.out.println("기기를 교체해주시길 바랍니다.");
+		}
+		else {
+			System.out.println("교체할 필요가 없습니다.");
+		}
+	}
+}
+// * NoteBook 클래스 생성 (Computer 상속)
+
+public class Ex_Computer {
+
+	public static void main(String[] args) {
+		Laptop l = new Laptop();
+	}
+
+}

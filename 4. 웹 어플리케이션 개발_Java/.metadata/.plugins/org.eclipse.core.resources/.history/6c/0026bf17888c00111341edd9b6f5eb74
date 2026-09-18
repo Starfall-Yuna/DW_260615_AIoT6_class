@@ -1,0 +1,86 @@
+package Service;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+import Model.Book;
+
+public class BookService {
+	static String url = "jdbc:mysql://localhost:3306/test_db";
+	static String username = "root";
+	static String passwd = "1234";
+	
+	// bookSelect() :: 기존 데이터 전체 조회 기능
+	public static void bookSelect() {
+		String sql = "select * from book;";
+		try {
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			System.out.println("--- DB접속 성공 ---");
+			
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				String book_name = rs.getString("book_name");
+				String author = rs.getString("author");
+				String isbn = rs.getString("isbn");
+				
+				Book b = new Book(book_name, author, isbn);
+				
+				System.out.println("책 이름: "+b.book_name);
+				System.out.println("저자명: "+b.author);
+				System.out.println("isbn: "+b.isbn);
+				System.out.println();
+			}
+		}catch(Exception e) {
+			System.out.println("[ 조회 ] 기능 수행 실패");
+			e.printStackTrace();
+		}
+	}
+
+	// bookInsert() :: 신규 데이터 추가
+	public static void bookInsert() {
+		String sql = "insert into book values (?, ?, ?);";
+		
+		try {
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			System.out.println("--- DB접속 가능 ---");
+			
+			PreparedStatement ps = con.prepareStatement(sql);
+			
+			Scanner scan = new Scanner(System.in);
+			String name = scan.next();
+			String author = scan.next();
+			String isbn = scan.next();
+			
+			ps.setString(1, name);
+			ps.setString(2, author);
+			ps.setString(3, isbn);
+			ps.executeUpdate();
+			
+			System.out.println("[ 삽입 ] 기능 수행 성공");
+		}catch(Exception e) {
+			System.out.println("[ 삽입 ] 기능 수행 실패");
+			e.printStackTrace();
+		}
+	}
+	// bookDelete() :: 기존 데이터 일부 삭제
+	public static void bookDelete() {
+		String sql = "delete from book where isbn = ?;";
+		
+		try {
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			System.out.println("--- DB접속 성공 ---");
+		}catch(Exception e) {
+			System.out.println("[ 삭제 ] 기능 수행 실패");
+			e.printStackTrace();
+		}
+	}
+}
+
+
+
+

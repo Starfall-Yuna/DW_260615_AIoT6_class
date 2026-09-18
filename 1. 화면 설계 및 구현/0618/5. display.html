@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px solid black;
+            width: 200px;
+            height: 100px;
+        }
+        #first{
+            /* block값 :: 브라우저 너비 전체를 가로로 가짐, 너비/높이 설정O */
+            display: block;
+        }
+        #second{
+            /* inline값 :: 필요한만큼만 영역을 가짐, 너비/높이 설정X */
+            display: inline;
+        }
+        #third{
+            /* inline-block값 :: 필요한만큼만 영역을 가짐(inline) + 너비/높이 설정O(block) */
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- display속성 :: "요소(박스)를 어떤 형태로 배치할지" 결정-->
+    <div id="first">block값 적용</div>
+    <div id="second">inline값 적용</div>
+    <div id="third">inline-block값 적용</div>
+</body>
+</html>

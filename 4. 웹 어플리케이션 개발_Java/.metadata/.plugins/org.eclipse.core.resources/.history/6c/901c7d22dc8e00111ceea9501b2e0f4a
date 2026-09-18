@@ -1,0 +1,17 @@
+package Model;
+
+public class Number {
+	// 필드 :: 멤버 "변수"
+	public int num1;
+	public int num2;
+	
+	// 메서드 :: 멤버 "함수"
+	//	add(), sub(), mul()
+	
+	// 생성자 :: 인스턴스 생성 함수
+	// 	"전달받은 두 개의 매개변수 값을 필드에 저장"
+	public Number(int num1, int num2) {
+		this.num1 = num1;
+		this.num2 = num2;
+	}
+}

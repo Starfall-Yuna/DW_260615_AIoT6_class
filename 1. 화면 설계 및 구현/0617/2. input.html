@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>input 태그 종류</h2>
+
+    <!-- input태그 :: 입력란 생성-->
+    <!-- input태그의 기본 형식은 "text"(텍스트)-->
+    <input> <br>    <!-- 자동으로 type="text" 적용-->
+    <input type="text" style="width:200px; background-color:beige; color:darkorchid"> <br>
+    <input type="button" value="입력">  <br>
+    <input type="submit" value="누르시오">  <br>
+    <input type="date"> <br>
+    <input type="color">    <br>
+    <input type="password"> <br>
+    <input type="file"> <br>
+    <input type="range">    <br>
+    
+    <!-- type="radio", type="checkbox"-->
+    <!-- radio :: 단일 선택 지원
+        name 속성값 배정 -> 하나의 카테고리에 있음을 명시
+        value값 조회 ::
+            검사창(F12)의 console에 입력
+            document.querySelector('input[name="gender"]:checked').value)
+    -->
+
+    <h3>성별 선택</h3>
+    <!-- <label>태그 for 속성 :: input태그 "연결"
+        <label> for 속성 = <input> id 속성 -->
+    <input type="radio" id="male" name="gender" value="male">  
+    <label for="male">남성</label>
+    <input type="radio" id="female"name="gender" value="female">
+    <label for="female">여성</label>
+    <input type="radio" id="etc" name="gender" value="etc">
+    <label for="etc">기타</label>
+    <br>
+
+    <!-- checkbox :: 다중 선택 지원
+        name 속성값 배정 -> 하나의 카테고리에 있음을 명시-->
+    <h3>취미 선택</h3>
+    <label>
+        <input type="checkbox" name="hobby" value="game">
+        게임
+    </label>
+    <label>
+        <input type="checkbox" name="hobby" value="exercise">
+        운동
+    </label>
+    <label>
+        <input type="checkbox" name="hobby" value="music">
+        음악 감상
+    </label>
+    <label>
+        <input type="checkbox" name="hobby" value="movie">
+        영화 감상
+    </label>
+
+    <!-- label태그 :: 태그에 대한 설명 -->
+    <!-- <label> for 속성 활용 -> 
+        label 텍스트를 눌렀을 때 input 체크 조정할 수 있도록 설정
+    -->
+</body>
+</html>

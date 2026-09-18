@@ -1,0 +1,22 @@
+
+// * Computer 클래스 생성
+abstract class Computer{
+	// - 필드 :: name(기종), year(구입년도)
+	public String name;
+	public int year;
+	// printCom(), changeCom() -> 추상 메소드
+	abstract public void printCom();
+	abstract public void changeCom();
+}
+// * Laptop 클래스 생성 (Computer 상속)
+class Laptop extends Computer{
+	// printCom() :: 멤버 2개에 대한 값 출력
+}
+
+public class Ex_Computer {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

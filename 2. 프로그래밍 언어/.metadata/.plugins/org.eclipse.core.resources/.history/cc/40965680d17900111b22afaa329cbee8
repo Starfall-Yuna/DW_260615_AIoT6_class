@@ -1,0 +1,13 @@
+
+class Computer{
+	// - 필드 :: name(기종), os(운영체제), memory(메모리용량)
+}
+class NoteBook extends Computer{
+	// - 필드 :: name(기종), os(운영체제), memory(메모리용량), weight(무게)
+}
+
+public class Super {
+	public static void main(String args[]) {
+		
+	}
+}

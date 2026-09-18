@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>회원가입 폼</h1>
+    <hr>
+
+    <!-- reset, submit 반드시 form 함께 활용
+        [원인1] 전송/리셋 수행할 범위를 form이 지정
+        [원인2] (submit) 데이터 전송 위치를 form이 지정 -> action속성
+    -->
+    <form action="success.html">    <!-- success.html로 이동 (데이터 전송)-->
+        <label>이름: </label>
+        <input type="text"> <br>
+        <label>생년월일: </label>
+        <input type="date"> <br>
+        <label>아이디: </label>
+        <input type="text"> <br>
+        <label>비밀번호: </label>
+        <input type="password"> <br>
+
+        <!-- type="submit", 입력한 내용 전송-->
+        <input type="submit" value="회원가입">
+        <!-- type="reset", 입력한 내용 초기화-->
+        <input type="reset" value="다시 작성">
+    </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수(function) :: "여러 명령문을 하나로 묶은 것"
+        // * 함수 생성
+        // function [함수이름](매개변수이름1, 매개변수이름2, ...){
+        //     수행할 명령문들;
+        // }
+        
+        // * 함수 생성 !== 함수 실행
+        function Welcome(){     // "Welcome 이름의 함수 생성"
+            alert("반갑습니다. 아메리카노 단체 주문을 진행합니다.");
+        }
+        function Order(count, money){       // "Order 이름의 함수 생성 (함수 실행할 때, 2개의 값 요청)"
+            if(money >= 4500*count){
+                alert(`아메리카노 ${count}잔이 준비되었습니다.`)
+            }
+            else{
+                alert(`돈이 부족합니다. 다시 실행해주세요.`)
+            }
+        }// count, money는 Order 함수 내에서만 활용O
+
+        // * 함수 호출 === 함수 실행
+        // Welcome     // 프로그램이 변수로 착각
+        Welcome();
+        let c = Number(prompt("몇 잔을 주문하시겠습니까?"))
+        let m = Number(prompt("돈을 입력해주세요."))
+        // 위에서 입력받은 c, m값을 함수로 전달해서 실행하고 싶음  -> "매개변수"
+        // Order(5, 5000);
+        Order(c, m);
+    </script>
+</body>
+</html>

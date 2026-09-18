@@ -1,0 +1,26 @@
+
+// extends를 통해서는, 2개 이상의 부모 클래스 지정X (다중 상속 지원X)
+//		-> 인터페이스 개념 나타난 계기
+
+// 인터페이스(interface) :: 필드는 상수, 메소드는 추상 메소드 (부모 멤버들끼리 충돌 방지)
+abstract class Robot{	// 로봇 인터페이스
+	public int MAX_BATTERY = 100;	// finalX, 자동으로 "상수" 지정, 100 값 수정X
+	// public int battery;		-> interface 변수 지정X
+	
+	abstract public void checkBattery() // 자동으로 "추상 메소드" 지정
+//	public void printMaxBattery() {	-> interface 일반 메소드 지정X
+//		System.out.println();
+//	}
+}
+abstract class dog{
+	abstract public void bark();
+}
+class RobotDog extends Robot, dog{
+	
+}
+
+public class class_interface {
+	public static void main(String args[]) {
+		
+	}
+}

@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>할일 조회 페이지</title>
+	</head>
+	<body>
+		<h3>3. 할일 전체 조회</h3>
+		<form action="/todo/show" method="post">
+			<input type="submit" value="전체 조회">
+		</form>
+		
+		<h3>4. 카테고리별 할일 조회</h3>
+		<form action="/todo/category" method="post">
+			카테고리:
+			<select name="category">
+				<option value="study">공부</option>	<!--category="study"-->
+				<option value="life">라이프</option>	<!--category="life"-->
+				<option value="work">업무</option>	<!--category="work"-->
+			</select>
+			
+			<input type="submit" value="조회">
+		</form>
+	</body>
+</html>
+
+

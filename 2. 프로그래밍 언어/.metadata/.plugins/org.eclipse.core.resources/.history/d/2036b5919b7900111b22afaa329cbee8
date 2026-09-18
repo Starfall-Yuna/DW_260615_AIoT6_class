@@ -1,0 +1,37 @@
+
+// 접근제어자 :: 멤버의 접근을 제어하는 구문
+//		public, private (protected)
+
+class Bus{
+	// 클래스 구성 요소 :: 필드, 메소드, 생성자
+	// 	- 필드(멤버변수)
+	public int money;
+	public String bank;
+	
+	//	- 메소드(멤버함수)
+	public void printBuscard() {
+		System.out.println("금액: "+this.money);
+		System.out.println("은행명: "+this.bank);
+	}
+	public void available() {
+		int count = money/1500;
+		System.out.println("총 "+count+"번 탑승할 수 있습니다.");
+	}
+	
+	// - 생성자 :: 인스턴스를 생성하는 특수한 메소드 
+	//		=> 반환형X, 클래스명과 동일
+	// 	- Bus() :: money의 값을 0으로, bank의 값을 null로 저장하는 생성자
+	public Bus() {
+		this.money = 0;
+		this.bank = null;	// null :: "값이 없음" 명시 (0, ""(공백) 다름)
+	}
+}
+
+// 객체 :: 클래스를 통해 생성된 것
+//		(동일한 클래스에서 생성된 것들 하나로 묶음)
+// 인스턴스 :: 클래스를 통해 생성된 것
+//		(생성된 것들 하나하나)
+public class review_Bus {
+	public static void main(String args[]) {
+	}
+}

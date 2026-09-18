@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 이벤트 적용(1) :: on이벤트 속성으로 직접 적용 -->
+    <button onclick="alert('클릭하였습니다')">클릭하시오</button>
+    <a href="#" onmouseenter="enter_func()">마우스를 여기로</a>
+    <p id="para">p 태그입니다.</p>
+    <hr>
+
+    <!-- 이벤트 적용(2) :: 이벤트 리스너 활용-->
+    <h1>실시간 이름 출력</h1>
+    <label>이름을 입력하세요: </label>
+    <input type="text" id="nameInput">
+    <p id="result">입력한 이름이 여기에 나옵니다.</p>
+
+    <script>
+        // 이벤트 :: "사용자의 행위에 따른" 웹페이지의 변화
+        //      => 마우스 올릴때, 클릭할 때, 꾹 누를때, ...
+
+        // addEventListener(사용자 동작, 이벤트 내용)
+        let name_input = document.querySelector("#nameInput");
+        name_input.addEventListener("click", function(){
+            alert("이름을 입력해주세요.");
+        })
+
+        // "입력창에 입력할 때마다, 아래의 p 태그 내용 변동"
+        let print_name = document.querySelector("#result")
+        name_input.addEventListener("input", function(){ // 입력창에 입력할 때마다,
+            //  아래의 p 태그 내용 변동
+            print_name.textContent = "입력한 이름: " + name_input.value;
+        })
+
+
+        function enter_func(){
+            alert("a 태그 위에 마우스가 있습니다.");
+
+            // p 태그 조작 :: 글자가 있으면 없어지게 하고, 없으면 나타나게 하라.
+            //      (style.display 값 조정)
+            //      => style.display === "none" -> 사라짐
+            //      => style.display !== "none" -> 나타남
+            let pTag = document.querySelector("#para");
+            if(pTag.style.display !== "none"){      // 글자가 있으면
+                pTag.style.display = "none";    // 없어지게 하고
+            }
+            else{       // 글자가 없으면
+                pTag.style.display = "block";   // 나타나게 하라
+            }
+        }
+    </script>
+</body>
+</html>

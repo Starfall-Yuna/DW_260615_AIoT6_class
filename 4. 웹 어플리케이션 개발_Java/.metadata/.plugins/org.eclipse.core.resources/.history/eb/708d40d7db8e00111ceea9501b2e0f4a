@@ -1,0 +1,61 @@
+package Service;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+import 
+
+
+public class NumberService {
+	static String url = "jdbc:mysql://localhost:3306/test_db";
+	static String username = "root"; 
+	static String passwd = "1234";
+	
+	public static void numberInsert() {
+		// 사용자에게 숫자 2개를 입력
+		Scanner scan = new Scanner(System.in);
+		System.out.print("숫자 2개를 입력하시오. ");
+		int n1 = scan.nextInt();
+		int n2 = scan.nextInt();
+		
+		// target DB 테이블에 데이터 저장
+		// 		"target DB 데이터 삽입 SQL문"
+		String sql = "insert into target values (?, ?);";
+		try {
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, n1);
+			ps.setInt(2, n2);
+			ps.executeUpdate();
+			System.out.println("[삽입] 작업 성공");
+		}catch(Exception e) {
+			System.out.println("[삽입] 작업 실패");
+			e.printStackTrace();
+		}
+	}
+	public static void numberCalc() {
+		String sql = "select * from target;";
+		try {
+			// DB의 모든 데이터를 조회
+			Connection con = DriverManager.getConnection(url, username, passwd);
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			// add(), sub(), mul() 메서드를 호출
+			// 계산 결과를 출력
+			while(rs.next()) {
+				// 조회한 데이터마다 Number 객체를 생성
+				int t1 = rs.getInt("num1");
+				int t2 = rs.getInt("num2");
+				Number n = new Number(t1, t2);
+				
+			}
+		}catch(Exception e) {
+			System.out.println("[조회&연산] 작업 실패");
+			e.printStackTrace();
+		}
+	}
+}

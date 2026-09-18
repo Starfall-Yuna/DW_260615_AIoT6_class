@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>성적입력 폼</title>
+	</head>
+	<body>
+		<form action="/calc_score" method="post">
+			<label>이름: </label>
+			<input type="text" name="n">	<br>
+			<label>자료구조: </label>
+			<input type="text" name="d">	<br>
+			<label>네트워크: </label>
+			<input type="text" name="net">	<br>
+			<label>임베디드: </label>
+			<input type="text" name="e">	<br>
+			
+			<input type="submit" value="성적 입력">
+			
+			<!-- localhost:8080/calc_score로 post방식 이동-->
+			<!-- 데이터 전달 ::
+				n=[이름_입력], d=[자료구조_점수],
+					net=[네트워크_점수], e=[임베디드_점수]
+			-->
+		</form>
+	</body>
+</html>
+
+

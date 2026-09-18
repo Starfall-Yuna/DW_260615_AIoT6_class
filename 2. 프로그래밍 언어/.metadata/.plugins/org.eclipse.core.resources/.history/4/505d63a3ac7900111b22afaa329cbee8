@@ -1,0 +1,52 @@
+
+// * Coffee 클래스 생성
+
+import java.util.Scanner;
+
+class Coffee{
+	// - 필드 :: menu(메뉴명), shot(에스프레소 샷 횟수), price(가격)
+	public String menu;
+	public int shot;
+	public int price;
+	
+	// * 생성자
+	// 	- Coffee() :: menu는 null값, shot은 0, price는 0값으로 설정 + 임의의 출력
+	public Coffee() {
+		this.menu = null;
+		this.shot = 0;
+		this.price = 0;
+		
+		System.out.println("사용할 수 없는 메뉴입니다.");
+	}
+	//	- Coffee(int) :: menu는 "아메리카노", shot은 2, price는 매개변수 값으로 설정 + 각 멤버값 출력하기
+	public Coffee(int p) {
+		this.menu = "아메리카노";
+		this.shot = 2;
+		this.price = p;
+		
+		System.out.println("메뉴명: "+this.menu);
+		System.out.println("샷: "+this.shot);
+		System.out.println("가격: "+this.price);
+	}
+	// 	- Coffee(String, int, int) :: 각 매개변수 값으로 멤버값 설정 + 각 멤버값 출력하기
+	public Coffee(String m, int s, int p) {
+		this.menu = m;
+		this.shot = s;
+		this.price = p;
+		
+		System.out.println("메뉴명: "+this.menu);
+		System.out.println("샷: "+this.shot);
+		System.out.println("가격: "+this.price);
+	}
+}
+
+public class Ex_Coffee {
+	public static void main(String args[]) {
+		// - Coffee()를 통해, c1 인스턴스 생성
+		Coffee c1 = new Coffee();
+		// - Coffee(int)를 통해, c2 인스턴스 생성 (임의의 값 2500 통하여 실행)
+		Coffee c2 = new Coffee(2500);
+		// - Coffee(String, int, int)를 통해, c3 인스턴스 생성 (입력값 기반으로 실행)
+		Scanner scan = new Scanner(System.in);
+	}
+}

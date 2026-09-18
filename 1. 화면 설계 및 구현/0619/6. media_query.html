@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 반응형 웹앱 :: 브라우저 크기에 따라서, 표현하는 홈페이지 다르게 설정 
+            PC, 태블릿, 휴대폰(평면, 폴드, 플립, ...) */
+        /* 미디어 쿼리 :: 반응형 웹앱 구현O 문법 */ 
+
+        /*
+            @media screen and (브라우저 조건식){
+                선택자{
+                    속성명1: 속성값1;
+                    ...
+                }
+            }
+        */
+        @media screen and (max-height: 700px) {
+            /* 현재 브라우저의 세로 크기가 최대 700px일 때(700px 이하일 때) 
+                -> 브라우저 크기의 조건 제시 */
+
+            /* 브라우저 크기 조건 만족 시, 아래의 스타일 적용 (img태그 너비/높이 조정)*/
+            img{
+                width: 700px;
+                height: 500px;
+            }
+        }
+        @media screen and (max-height: 500px) {
+            img{
+                border: 3px solid black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://manbalboy.github.io/assets/img/blog/html/html.png">
+</body>
+</html>

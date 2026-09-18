@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hello">안녕하세요</h1>
+    <hr>
+    <label>이름을 입력하세요: </label>
+    <input type="text" >
+
+    <div></div>
+
+    <script>
+        // JavaScript :: 웹페이지 동작(이벤트) 구현
+        // DOM :: html 문서 구조
+
+        // - document :: 현재 웹페이지 전체
+        console.log(document);
+
+        // - getElementById() :: "Id값에 의해서 요소를 가지고 온다"
+        //      제시된 id값과 동일한 태그 불러옴
+        // - textContent :: 특정 태그의 글자
+        let hTag = document.getElementById("hello");
+        console.log(hTag);
+        hTag.textContent = "반갑습니다.";   // #hello 태그의 글자를 "반갑습니다" 변경
+
+        // - querySelector() :: CSS 선택자 방식으로 태그 불러옴
+        let labelTag = document.querySelector("label");     // label 태그 선택하여 불러옴   
+        console.log(labelTag);
+        labelTag.textContent = "이름: ";
+        let inputTag = document.querySelector("[type='text']");
+        inputTag.value = "홍길동"
+        inputTag.placeholder = "(ex) 홍길동"
+            // DOM 조작을 통해 속성값 변경O
+        
+        // inputTag의 배경색을 원하시는 색상으로 변경
+        inputTag.style.backgroundColor = "yellow";
+
+        // * Js 출력문 :: innerHTML
+        let divTag = document.querySelector("div");
+        // divTag.textContent = "<h3>잘 부탁드립니다.</h3>";
+        divTag.innerHTML = "<h3>잘 부탁드립니다.</h3>";
+            // html로 인식하는 건 innerHTML (textContent는 글자 그대로 읽음)
+    </script>
+</body>
+</html>

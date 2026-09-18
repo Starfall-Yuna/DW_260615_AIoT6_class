@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>인적사항 입력</title>
+	</head>
+	<body>
+		<h1>아래를 입력하세요.</h1>
+		<hr>
+		<form action="/print" method="post">
+			<label>이름: </label>
+			<input type="text" name="name">	<br>
+			
+			<label>성별: </label>
+			<input type="radio" name="gender" value="남성">
+			<label>남성</label>
+				<!-- gender = "남성" -->
+			<input type="radio" name="gender" value="여성">
+			<label>여성</label>		<br>
+				<!-- gender = "여성" -->
+			
+			<input type="submit" value="입력">
+		</form>
+	</body>
+</html>

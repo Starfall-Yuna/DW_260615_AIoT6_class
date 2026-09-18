@@ -1,0 +1,46 @@
+
+// 오버라이딩 :: "부모 메소드보다 자식 메소드를 우선시하여 호출"
+// 추상 클래스 :: "구체적이지 않은 클래스", 인스턴스 생성X
+abstract class Animal{
+	// - 생성자 :: Animal()
+	public Animal() {
+		System.out.println("동물 데이터를 생성합니다.");
+	}
+	// - 메소드 :: Cry()	-> 추상 메소드
+	abstract public void Cry();
+	public void abc() {
+		
+	}
+}
+// 클래스 간의 공통되는 멤버를, 추상 클래스로 묶어냄
+//		-> 추상 메소드의 구체화는 
+class Dog extends Animal{
+//	public Dog() {
+//		super();	// Animal 생성자 실행
+//	}
+	public void Cry() {
+		System.out.println("월월");
+	}
+}
+class Cat extends Animal{
+//	public Cat() {
+//		super();	// Animal 생성자 실행
+//	}
+	public void Cry() {
+		System.out.println("야옹");
+	}
+}
+
+public class review {
+
+	public static void main(String[] args) {
+		// Animal a = new Animal();
+		Dog d = new Dog();
+		Cat c = new Cat();
+		d.Cry();
+		c.Cry();
+	}
+
+}
+
+

@@ -1,0 +1,26 @@
+
+class Computer{
+	// - 필드 :: name(기종), os(운영체제), memory(메모리용량)
+	public String name;
+	public String os;
+	public int memory;
+	
+	public Computer() {
+		System.out.println("Computer() 생성자 실행");
+	}
+}
+class NoteBook extends Computer{
+	// - 필드 :: name(기종), os(운영체제), memory(메모리용량), weight(무게)
+	public double weight;
+	
+	public NoteBook() {
+		System.out.println("NoteBook() 생성자 실행");
+	}
+}
+
+public class Super {
+	public static void main(String args[]) {
+		Computer c = new Computer();
+		NoteBook nb = new NoteBook();
+	}
+}

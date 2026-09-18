@@ -1,0 +1,62 @@
+-- * STUDENT 테이블 생성
+CREATE TABLE STUDENT(
+    NUM VARCHAR2(20),
+    NAME VARCHAR2(20), 
+    AGE NUMBER
+);
+
+-- * ADD_STU 프로시저 생성 (VARCHAR2, VARCHAR2, NUMBER)
+CREATE OR REPLACE PROCEDURE ADD_STU(
+    INPUT1 IN VARCHAR2,
+    INPUT2 IN VARCHAR2,
+    INPUT3 IN NUMBER
+)
+IS
+BEGIN
+    -- 매개변수 값을 기반으로 STUDENT 테이블에 데이터 삽입(INSERT)
+    INSERT INTO STUDENT VALUES (INPUT1, INPUT2, INPUT3);
+    -- "학생이 추가되었습니다." 구문 출력 후 SELECT문 실행
+    DBMS_OUTPUT.PUT_LINE('학생이 추가되었습니다.');
+    
+    -- 프로시저 내부에서 여러 값 불러오기 :: FOR - LOOP 구문
+END;
+/
+-- DEL_NAME 프로시저 생성 (VARCHAR2)
+CREATE OR REPLACE PROCEDURE DEL_NAME(
+    DEL_TARGET VARCHAR2
+)
+IS
+BEGIN
+    -- 매개변수 값을 이름으로 가진 학생 데이터 삭제
+    DELETE FROM STUDENT S
+    WHERE S.NAME = DEL_TARGET;
+    DBMS_OUTPUT.PUT_LINE('학생이 삭제되었습니다.');
+END;
+/
+-- DEL_UNDER_AGE 프로시저 생성 (NUMBER)
+CREATE OR REPLACE PROCEDURE DEL_UNDER_AGE(
+    DEL_TARGET IN NUMBER
+)
+IS
+BEGIN
+    -- 매개변수 값 이하의 나이를 가진 학생 데이터 삭제
+    DELETE FROM STUDENT S
+    WHERE S.AGE <= DEL_TARGET;
+    DBMS_OUTPUT.PUT_LINE('학생이 삭제되었습니다.(2)');
+END;
+/
+
+EXEC ADD_STU('1813', 'Park', 22);
+EXEC ADD_STU('1613', 'Kim', 25);
+EXEC ADD_STU('1513', 'Lee', 26);
+EXEC ADD_STU('2013', 'Jung', 30);
+EXEC ADD_STU('2113', 'Jang', 20);
+SELECT * FROM STUDENT;
+
+EXEC DEL_NAME('Lee');
+SELECT * FROM STUDENT;
+
+EXEC DEL_UNDER_AGE(24);
+SELECT * FROM STUDENT;
+
+-- TCL :: COMMIT, ROLLBACK, SAVEPOINT       -> 예습

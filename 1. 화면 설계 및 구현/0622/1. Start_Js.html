@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS :: 웹페이지 화면 디자인 */
+        </style>
+</head>
+<body>
+    <!-- HTML :: 웹페이지 화면 구성 -->
+    
+    <script src="test.js"></script>
+    <script>
+        // 한줄 주석
+        /*
+            여러줄 주석
+        */
+
+        // JavaScript :: 웹페이지 동작(이벤트) 정의
+        //      <body>의 최하단에 작성하는 것을 권장 (작동 자체에는 위치가 크게 상관X)
+            
+        // * Js 출력문 (3가지)
+        //      1) alert() :: 경고문 출력
+        alert("경고문이 출력됩니다.");
+        //      2) console.log() :: 콘솔창 출력
+        //          (VsCode debug console, 브라우저 F12(검사창) >> console)
+        console.log("콘솔에 출력됩니다.");
+        //      3) document.write() :: 웹페이지 출력
+        document.write("웹페이지에 출력됩니다.");
+
+        // 내부 Js :: .html 파일 안에, <script> 태그 안으로 정의하는 Js
+        // 외부 Js :: .html 파일 외부로 작성한 .js (불러오기)
+
+        // * 출력문에서 13+7의 결과값을 바로 출력하기
+        console.log("13+7=" + (13+7));    // + :: 문장 연결
+            // 37번째 줄의 (13+7) 결과가 38번째 줄에 왔을때 값이 유지가 되있을까? No
+            //      => 37번째 줄에만 존재 (그 다음줄부턴 소멸)
+        console.log(`13+7=${13+7}`);
+    </script>
+</body>
+</html>

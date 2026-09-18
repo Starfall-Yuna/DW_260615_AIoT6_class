@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class parameter {
+	// * 함수 생성 (매개변수)
+//	public static [반환형, void] [함수이름](매개변수자료형1 매개변수이름1, ...){
+//		실행할 명령문;
+//	}
+	public static void calc(int n1, int n2) {
+		
+	}
+	
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		
+		
+	}
+}

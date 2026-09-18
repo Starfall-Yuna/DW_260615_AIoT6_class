@@ -1,0 +1,11 @@
+
+// 상속 :: "부모가 자식에게 상속"		-> 부모 클래스, 자식 클래스 (클래스 간의 관계)
+class Phone{
+	// - 필드 :: 
+}
+
+public class extend {
+	public static void main(String args[]) {
+		
+	}
+}

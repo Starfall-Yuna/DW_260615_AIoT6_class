@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class parameter {
+	// * 함수 생성 (매개변수)
+//	public static [반환형, void] [함수이름](매개변수자료형1 매개변수이름1, ...){
+//		실행할 명령문;
+//	}
+	public static void calc(int n1, int n2) {	// calc() 실행할 때, int형 값이 2개 필요
+		// calc(a, b) 실행하면, a값은 n1으로, b값은 n2로 들어감
+		System.out.println(n1+n2);
+		System.out.println(n1-n2);
+		System.out.println(n1*n2);
+		System.out.println(n1/n2);
+		System.out.println(n1%n2);
+	}
+	
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		
+		calc(a, b);
+	}
+}

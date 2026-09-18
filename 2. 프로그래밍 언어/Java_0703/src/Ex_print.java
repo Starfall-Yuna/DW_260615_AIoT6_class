@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Ex_print {
+	// 아래의 main 함수를 실행하기 위한 3개의 print() 함수 생성 (반환형은 모두 void로, return문 없음)
+	public static void print() {
+		// "안녕하세요, 반갑습니다." 출력
+		System.out.println("안녕하세요, 반갑습니다.");
+	}
+	public static void print(String n) {
+		// "이름: name값" 출력
+		System.out.println("이름: "+n);
+	}
+	public static void print(int a) {
+		// "나이: age값" 출력
+		System.out.println("나이: "+a);
+	}
+	
+	public static void main(String args[]) {
+		// main 함수 내부 내용은 변경X
+		Scanner sc = new Scanner(System.in);
+		
+		print();
+		String name = sc.next();
+		print(name);
+		int age = sc.nextInt();
+		print(age);		
+	}
+}

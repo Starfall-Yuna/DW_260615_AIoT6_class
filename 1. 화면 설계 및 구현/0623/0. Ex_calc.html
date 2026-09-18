@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 입력문(2) :: prompt(), confirm()
+        //  - prompt(질문지, 자동입력값) :: string형(문자열) 입력
+        //  - confirm(질문지) :: boolean형(진위형) 입력
+
+        let n = prompt("이름을 입력해주세요.", "000")   // 여기서 입력한 이름을 출력할 수 있을까??
+            // 입력값이 n이라는 이름의 변수 메모리에 전달
+        let ok = confirm("이대로 진행하시겠습니까?")
+
+        // 입력문 2개를 통해서 2개의 숫자(number)를 입력하세요
+        let num1 = Number(prompt("첫번째 숫자 입력"))   // 입력값 자료형 :: string형 -> number형
+        let num2 = Number(prompt("두번째 숫자 입력"))
+
+        // 2개의 숫자에 대한 덧셈/뺄셈/곱셈 연산 결과를
+        // 웹페이지 출력문을 통하여 출력을 수행하시오
+        document.write(`${num1+num2}<br>`)
+        document.write(`${num1-num2}<br>`)
+        document.write(`${num1*num2}<br>`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+// * Coffee 클래스 생성
+class Coffee{
+	// - 필드 :: menu(메뉴명), shot(에스프레소 샷 횟수), price(가격)
+	public String menu;
+	public int shot;
+	public int price;
+	
+	// * 생성자
+	// 	- Coffee() :: menu는 null값, shot은 0, price는 0값으로 설정 + 임의의 출력
+	public Coffee() {
+		this.menu = null;
+		this.shot = 0;
+		this.price = 0;
+		
+		System.out.println();
+	}
+}
+
+public class Ex_Coffee {
+	public static void main(String args[]) {
+		
+	}
+}

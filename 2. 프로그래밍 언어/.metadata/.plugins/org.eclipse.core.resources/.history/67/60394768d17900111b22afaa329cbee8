@@ -1,0 +1,13 @@
+
+class Computer{
+	
+}
+class NoteBook extends Computer{
+	
+}
+
+public class Super {
+	public static void main(String args[]) {
+		
+	}
+}

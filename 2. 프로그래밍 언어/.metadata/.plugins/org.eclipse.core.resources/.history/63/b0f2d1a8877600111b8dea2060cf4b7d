@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Ex_574 {
+	public static int useIF(int n1, int n2, int n3) {
+		int result;
+		if(n1 > n2) { result = n1; }
+		else {result = n2; }			// result에는 n1이나 n2 중 하나의 값
+		
+		if(result < n3) { result = n3; }
+		
+		return result;
+	}
+	public static int useMaxFunc(int n1, int n2, int n3) {
+		int result = Math.max(Math.max(n1, n2), n3);
+		// 1) n1과 n2 중 큰 값 반환
+		// 2) 1)의 결과와 n3 중 큰 값 반환 -> result로 저장
+		return result;
+	}
+	
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+//		- 3개의 정수 입력
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		int c = scan.nextInt();
+//		- 최댓값 반환하는 함수 실행 및 출력
+		int r1 = useIF(a, b, c);
+		System.out.print("useIF() 실행 결과: ");
+		System.out.println(r1);
+		int r2 = useMaxFunc(a, b, c);
+	}
+}

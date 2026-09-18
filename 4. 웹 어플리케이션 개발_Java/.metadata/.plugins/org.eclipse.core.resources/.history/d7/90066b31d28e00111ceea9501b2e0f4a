@@ -1,0 +1,10 @@
+package Service;
+
+public class NumberService {
+	public static void numberInsert() {
+		
+	}
+	public static void numberCalc() {
+		
+	}
+}

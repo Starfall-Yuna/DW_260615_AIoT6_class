@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Ex_calc {
+	// * 함수 생성
+//	public static [반환형] [함수이름](매개변수타입1 매개변수명1, ...) {
+//		실행할 명령문;
+//	}
+	// 반환형이 void? "돌려줄 값이 없다" -> return문 사용X
+	
+	// * add(int, int) :: 매개변수 2개의 값을 합한 결과 return
+	public static int add(int n1, int n2) {
+			// add 이름의 함수 (int형 정보(n1, n2) 1개 요청, int형 정보 1개 반환(n+1))
+		return n+1;
+	}
+	// * sub(int, int) :: 매개변수 2개의 값을 뺀 결과 return
+	// * multi(int, int) :: 매개변수 2개의 값을 곱한 결과 return
+
+	
+	public static void main(String args[]) {
+		// System.out.println(add(5));		// add 함수 실행 (5 전송)
+			// "5라는 값을 add()에 빌려주고, 결과인 6을 돌려받는 상태"
+		
+		// - 2개의 정수형 입력 받기
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		// - 입력값에 대한 add(), sub(), multi() 함수 결과 확인
+	}
+}

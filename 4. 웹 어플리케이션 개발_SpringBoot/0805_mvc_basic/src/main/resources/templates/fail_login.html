@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>로그인_실패</title>
+	</head>	
+	<body>
+		<h1>다시 시도해주시길 바랍니다.</h1>
+		<h3>입력한 아이디: <span th:text="${id}"></span></h3>
+		<h3>입력한 비밀번호: <span th:text="${pw}"></span></h3>
+		
+		<form action="/login" method="get">
+			<input type="submit" value="재시도">
+		</form>
+	</body>
+</html>

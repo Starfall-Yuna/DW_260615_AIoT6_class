@@ -1,0 +1,13 @@
+package Example;
+// "이 파일은 Example 패키지에 있다." 명시
+
+// 
+
+public class Ex_Bus {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

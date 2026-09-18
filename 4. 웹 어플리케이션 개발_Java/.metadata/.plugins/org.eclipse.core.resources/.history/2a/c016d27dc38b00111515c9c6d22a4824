@@ -1,0 +1,6 @@
+package Model;
+
+// Model은 DB Item 테이블 칼럼과 동일한 구성
+public class Item {
+	
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 반응 선택자 :: 사용자 동작에 반응하는 스타일 지정
+            :hover, :active
+        */
+        /* 상태 선택자 :: 태그가 특정 상태일 때의 스타일 지정
+            :checked, :enabled, :disabled, :focus
+        */
+        [type="radio"]:checked + label{     /* + :: 동위 선택자 */
+             /* type="radio" 태그가 체크 상태일 때,
+                체크된 태그의 바로 뒤에 있는 label태그의 스타일 변경 */
+            color: lightcoral;
+        }
+        [type="text"]:enabled{
+            /* type="text" 태그가 사용 가능할 때, 스타일 변경 */
+            background-color: bisque;
+        }
+        [type="text"]:disabled{
+            /* type="text" 태그가 사용 불가능할 때, 스타일 변경 */
+            background-color: grey;
+        }
+        [type="text"]:focus{
+            /* type="text" 태그에 커서가 잡힐 때(포커싱될 때), 스타일 변경 */
+            background-color:aquamarine;
+        }
+
+        /* etc. 동위 선택자, 구조 선택자, 링크 선택자, 문자 선택자 */
+    </style>
+</head>
+<body>
+    <input type="radio" name="gender">
+    <label>남성</label>
+    <input type="radio" name="gender">
+    <label>여성</label>
+    <hr>
+
+    <input type="text" >    <br>
+    <input type="text" >    <br>
+    <input type="text" disabled="disabled"> <br>
+</body> 
+</html>

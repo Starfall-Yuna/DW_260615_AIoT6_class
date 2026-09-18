@@ -1,0 +1,29 @@
+
+class ToDo{
+	// 클래스 구성 요소 :: 필드, 메소드, "생성자"
+	// 	- 생성자 :: 인스턴스를 생성하는 특수한 메소드(함수)
+	
+	// 필드 :: content(할일 내용), date(마감일)
+	public String content;
+	public String date;
+	
+	// 메소드 :: printToDo()
+	public void printToDo() {
+		System.out.println("해야할 일: "+this.content);
+		System.out.println("마감일: "+this.date);
+	}
+	
+	// 별도로 생성자 만들지 않으면, 아래 코드가 자동 실행됌
+//	public ToDo() {
+//		
+//	}
+}
+
+public class Constructor {
+	public static void main(String[] args) {
+		// 인스턴스 t1 생성
+		ToDo t1 = new ToDo();	// ToDo() -> 생성자
+
+	}
+
+}

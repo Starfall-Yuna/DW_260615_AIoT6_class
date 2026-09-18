@@ -1,0 +1,30 @@
+
+// * Menu 인터페이스 생성
+interface Menu{
+	// - 필드 :: TAX_RATE = 10(부가세율)
+	public int TAX_RATE = 10;	// 상수(final), 값 변경X
+	
+	// - 메소드 :: order(), printInfo()
+	public void order();	
+	public void printInfo();	// -> 추상(abstract) 메소드
+}
+// * Coffee 클래스 생성 (Menu 상속)
+class Coffee implements Menu{
+	// - 필드 :: TAX_RATE = 10(부가세율), name(메뉴명), price(가격)
+	public String name;
+	public int price;
+	// - order() :: this.name을 기반으로 "000 주문이 들어왔습니다." 출력
+	public void order() {
+		System.out.println(this.name+" 주문이 들어왔습니다.");
+	}
+	// - printInfo() :: 메뉴명, 가격, 부가세율 값을 출력 + (부가세 연산해서 출력)
+}
+
+public class Ex_menu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

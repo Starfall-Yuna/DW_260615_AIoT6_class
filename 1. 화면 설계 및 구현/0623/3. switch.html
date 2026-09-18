@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 조건문 :: if-else if-else, "switch"
+        
+        // (ex) 자판기 프로그램
+        // (1) 사용자에게 돈 입력받기
+        let money = Number(prompt("돈을 넣어주세요"))
+
+        // (2) 사용자에게 메뉴 출력하고, 원하는 메뉴 번호 입력하기
+        let menu = Number(prompt("원하는 메뉴를 입력해주세요. (1. 콜라(1000원), 2. 물(800원))"))
+
+        // (3) 선택한 메뉴를 구매할 수 있는지 파악, 거스름돈 출력
+        // if(menu === 1){ money -= 1000 }
+        // else if(menu === 2){ money -= 800 }
+        switch(menu){
+            case 1:     // menu의 값이 1인 경우일 때 (menu === 1)
+                money -= 1000
+                break;
+            case 2:     // menu의 값이 2인 경우일 때 (menu === 2)
+                money -= 800
+                break;
+            default:    // 위 경우에 모두 해당이 안될 때 (else)
+                money = -1;
+        }// break; 만나면 여기로 빠짐
+
+        // money >= 0, 음료를 구매할 수 있음
+        if(money >= 0){
+            document.write(`음료가 나왔습니다. 거스름돈은 ${money}원입니다.`)
+        }
+        // money < 0, 음료를 구매할 수 없음
+        else{
+            document.write(`다시 실행해주세요.`)
+        }
+    </script>
+</body>
+</html>

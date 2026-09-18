@@ -1,0 +1,56 @@
+
+// * Watch 클래스 생성
+class Watch{
+	// - 필드 :: hour(시), min(분), sec(초)
+	public int hour;
+	public int min;
+	public int sec;
+	// - 메소드 :: Time()
+	public void Time() {
+		// "현재는 오전/오후 00시 00분 00초입니다." 정보 출력
+		if(0<=this.hour && this.hour<12) {	// 오전인 경우
+			System.out.println("현재는 오전 "+this.hour+"시 "+this.min+"분 "+this.sec+"초입니다.");
+		}
+		else if(this.hour == 12){
+			System.out.println("현재는 오후 "+this.hour+"시 "+this.min+"분 "+this.sec+"초입니다.");
+		}
+		else {
+			System.out.println("현재는 오후 "+(this.hour-12)+"시 "+this.min+"분 "+this.sec+"초입니다.");
+		}
+	}
+}
+
+class SmartWatch extends Watch{
+	// - 필드 :: "hour(시), min(분), sec(초)", phone(연동된 휴대폰 기종)
+	public String phone;
+	
+	// - 메소드 :: "Time()", Reset()
+	public void Reset() {
+		// 1) 현재 연동된 휴대폰 기종 이름 출력
+		System.out.println("현재 연동된 휴대폰: "+this.phone);
+		// 	2) 리셋 안내 메시지 출력
+		System.out.println("--- 리셋을 진행합니다 ---");
+		//	3) phone의 값을 null로 설정
+		this.phone = null;
+	}
+}
+
+public class Ex_Watch {
+
+	public static void main(String[] args) {
+		Watch w = new Watch();
+		w.hour = 21;
+		w.min = 30;
+		w.sec = 50;
+		w.Time();
+		
+		SmartWatch sw = new SmartWatch();
+		sw.hour = 23;
+		sw.min = 59;
+		sw.sec = 59;
+		sw.phone = "Galaxy S26";
+		sw.Time();
+		sw.Reset();
+	}
+
+}

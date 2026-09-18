@@ -1,0 +1,30 @@
+
+// 일반 class를 통해서는, 2개 이상의 부모 클래스 지정X = 다중 상속X
+//		=> 인터페이스 개념 등장한 계기
+
+// 인터페이스(interface) :: 필드는 상수, 메소드는 추상 메소드
+//		(ex) Robot.test(), dog.test() 둘다 있다면, 어떤걸 실행할지 결정X
+//			=> 위와 같은 부모 멤버끼리의 충돌 방지
+interface Robot {
+	// public void test() {System.out.println("Robot:테스트");}
+	public void checkBattery();
+}
+interface dog{
+	// public void test() {System.out.println("Dog:테스트");}
+	public void bark();
+}
+class RobotDog implements Robot, dog{	// interface 상속 :: implements
+	public void checkBattery() {
+		System.out.println("현재 배터리를 출력합니다.");
+	}
+	public void bark() {
+		System.out.println("월월");
+	}
+}
+
+public class class_interface {
+	public static void main(String args[]) {
+		RobotDog rd = new RobotDog();
+		rd.test();
+	}
+}

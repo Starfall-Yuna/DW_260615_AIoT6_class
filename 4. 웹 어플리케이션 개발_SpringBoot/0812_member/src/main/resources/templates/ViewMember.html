@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>사용자 정보 조회</title>
+	</head>
+	<body>
+		<h2>조회 결과</h2>
+		<hr>
+		<h3>이름: <span th:text="${mem.getMemName()}"></span></h3>
+		<h3>아이디: <span th:text="${mem.getMemId()}"></span></h3>
+		<h3>비밀번호: <span th:text="${mem.getMemPw()}"></span></h3>
+	</body>
+</html>
