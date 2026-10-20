@@ -863,3 +863,13 @@
 2026-08-28 01:44:38.324: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-08-28 01:44:38.324: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
 2026-08-28 03:05:11.663: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-13 02:30:09.411: [INFO] CurrentProfilePath: C:\Users\ddw\Desktop\공유 폴더\4. 웹 어플리케이션 개발_SpringBoot\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-13 02:30:09.411: [INFO] Profiles total count: 1
+2026-10-13 02:30:09.411: [INFO] Profile: name=프로필 1 path=C:\Users\ddw\Desktop\공유 폴더\4. 웹 어플리케이션 개발_SpringBoot\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-28T00:33:20.424Z
+2026-10-13 02:30:09.411: [INFO] LastUsedProfileDir: C:\Users\ddw\Desktop\공유 폴더\4. 웹 어플리케이션 개발_SpringBoot\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-13 02:30:09.411: [INFO] MostRecentlyActiveProfile: name=프로필 1 path=C:\Users\ddw\Desktop\공유 폴더\4. 웹 어플리케이션 개발_SpringBoot\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-28T00:33:20.424Z
+2026-10-13 02:30:09.411: [INFO] OnDoneLoading sync enabled: 0
+2026-10-13 02:30:09.411: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-13 02:30:09.411: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-13 02:30:09.411: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-13 06:20:31.489: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
