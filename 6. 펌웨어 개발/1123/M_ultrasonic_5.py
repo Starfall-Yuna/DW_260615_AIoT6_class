@@ -1,0 +1,44 @@
+import machine
+import time
+from machine import Pin
+from machine import SoftI2C
+from ssd1306 import SSD1306_I2C
+
+# 초음파센서, OLED 핀 설정
+trigger = Pin(17, mode=Pin.OUT, pull=None)
+echo = Pin(1, mode=Pin.IN, pull=None)
+trigger.value(0)
+
+i2c = SoftI2C(sda=Pin(43), scl=Pin(44))
+oled = SSD1306_I2C(128, 64, i2c) 
+
+def get_distance_cm():
+    trigger.value(0)
+    time.sleep_us(5)
+    trigger.value(1)
+    time.sleep_us(10)
+    trigger.value(0)
+
+    pulse_time = machine.time_pulse_us(echo, 1, 30000)
+    distance_cm = (pulse_time / 2) / 29.1
+    if 2 <= distance_cm <= 200:
+        return distance_cm
+    else:
+        return 0
+
+try:
+    while True:
+        # 초음파센서 값 기반 장애물과의 편도 거리 불러오기
+        distance_cm = get_distance_cm()
+        
+        # 초음파센서 수평 안 맞추면, distance값은 0이 됨
+        if distance_cm!=0:
+            oled.fill(0)
+            oled.text("distance:"+str(round(distance_cm)),10,30)
+            oled.show()
+        time.sleep(0.1)
+        
+
+except KeyboardInterrupt:
+    oled.fill(0)
+    oled.show()
