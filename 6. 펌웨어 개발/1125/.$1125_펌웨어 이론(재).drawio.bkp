@@ -1,0 +1,16 @@
+<mxfile host="Electron">
+  <diagram name="페이지-1" id="erx312uX5l6zrKZJ-7sp">
+    <mxGraphModel dx="939" dy="505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PUQBR2xYPAx_E38RQKPr-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=top;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;* ESP32-S3 기본 구성 요소&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="370" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PUQBR2xYPAx_E38RQKPr-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=top;rounded=0;" value="- CPU (중앙처리장치)&lt;div&gt;- RAM ()&lt;/div&gt;&lt;div&gt;- Flash ()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="380" x="70" y="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
