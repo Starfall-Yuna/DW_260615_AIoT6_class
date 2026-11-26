@@ -2,8 +2,8 @@ import network
 import time
 
 # 존재하는 공유기/핫스팟 이름, 비밀번호
-ssid = "계란마리"
-password = "mary135790"
+ssid = "DW503"
+password = "dwa503**"
 
 # 네트워크 접속 함수
 def wifi_connect():
@@ -13,10 +13,12 @@ def wifi_connect():
 
     # 와이파이 연결이 안 되어있다면,
     if not wlan.isconnected():
-        # ssid, 비밀번호로 연결 시도 (300ms 간격으로 접속 시도)
+        # ssid, 비밀번호로 연결 시도
         print("Connecting to network...")
         wlan.connect(ssid, password)  
 
+        # 300ms 간격, 무한으로 접속 상태 확인
+        #   (정상적으로 연결이 안 되면, 무한 반복)
         while not wlan.isconnected():
             time.sleep_ms(300)
 
@@ -27,7 +29,7 @@ def wifi_connect():
         #  - 서브넷 마스크 :: 같은 네트워크인지를 판단하는 기준
         #  - 게이트웨이 :: 일반적으로 공유기 주소 (다른 네트워크로 데이터를 전송하기 위한 통로)
         #  - DNS :: 인터넷 사이트 이름을 ip 주소로 바꿔주는 서버 (데이터 전송 목적지 주소 확인)
-        
+        #      'google.com' -> [DNS] 8.8.8.8
         print("Connected to network:", wlan.ifconfig())
         return True
     else:
